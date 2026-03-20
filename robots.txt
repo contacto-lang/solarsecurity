@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.solarsecurity.cl/sitemap.xml
+
+# Bloquear recursos innecesarios
+Disallow: /?enviado=1
+Disallow: /?enviado=2
