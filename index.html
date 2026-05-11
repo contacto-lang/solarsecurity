@@ -21,7 +21,6 @@
     <title>Cámaras Solares para Parcelas y Zonas Rurales Chile | EZVIZ 4G Sin WiFi | SolarSecurity.cl</title>
     <meta name="description" content="Cámaras de seguridad solares EZVIZ para parcelas, fundos, viñedos y zonas rurales en Chile. Sin cables ni electricidad. 4G para lugares sin WiFi ni internet. Instalación profesional con poste metálico galvanizado en Región Metropolitana y Valparaíso.">
 
-    <!-- Keywords long-tail con alta intención de compra -->
     <meta name="keywords" content="camara solar parcela chile, camara solar fundo chile, camara solar viñedo chile, camara solar bodega rural chile, camara solar sin electricidad, camara solar sin wifi, camara solar 4g campo chile, vigilancia remota parcela chile, camara para parcela sin luz, camara rural sin internet chile, camara solar zona rural chile, ezviz solar chile, ezviz eb3 4g chile, ezviz eb8 4g ptz chile, camaras seguridad solares chile, solarsecurity, solarsecurity.cl, instalacion camaras solares santiago, instalacion camaras solares valparaiso, camara seguridad solar sin cables, vigilancia solar campo, monitoreo remoto parcela 4g, camara solar con bateria campo, camara solar ptz 360 grados chile, camara solar agricola chile, sistema vigilancia solar chile, camara solar resistente lluvia, seguridad rural chile, camara sin electricidad campo, vigilancia fundo chile, camara solar ganadero chile, instalacion camaras rural region metropolitana, ezviz cb8 chile, ezviz eb3 wifi solar, kit camara solar 4g chile, monitoreo 24 horas sin cables, camara solar hd 2k chile">
 
     <!-- ═══════════════════════════════════════════════════════════════
@@ -97,10 +96,12 @@
          PERFORMANCE
     ════════════════════════════════════════════════════════════════ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://i.postimg.cc" crossorigin>
     <link rel="dns-prefetch" href="https://images.pexels.com">
     <link rel="dns-prefetch" href="https://ezvizstore.cl">
     <link rel="dns-prefetch" href="https://formsubmit.co">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 
     <!-- ═══════════════════════════════════════════════════════════════
          SCHEMA.ORG — LocalBusiness enriquecido
@@ -247,9 +248,6 @@
     }
     </script>
 
-    <!-- ═══════════════════════════════════════════════════════════════
-         SCHEMA.ORG — Servicios detallados
-    ════════════════════════════════════════════════════════════════ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -261,7 +259,7 @@
         "url": "https://www.solarsecurity.cl"
       },
       "name": "Instalación profesional de cámaras solares EZVIZ con poste galvanizado",
-      "description": "Servicio completo de instalación de cámaras de seguridad solares EZVIZ para zonas rurales y urbanas. Incluye cámara, poste metálico galvanizado con base de hormigón, configuración 4G o WiFi, capacitación y soporte post-instalación.",
+      "description": "Servicio completo de instalación de cámaras de seguridad solares EZVIZ para zonas rurales y urbanas. Incluye cámara, poste metálico galvanizado con base de hormigón, configuración 4G o WiFi según disponibilidad, programación de alertas y zonas de detección, capacitación completa en app EZVIZ, y soporte post-instalación durante el primer mes.",
       "areaServed": [
         { "@type": "AdministrativeArea", "name": "Región Metropolitana, Chile" },
         { "@type": "AdministrativeArea", "name": "Región de Valparaíso, Chile" }
@@ -273,9 +271,6 @@
     }
     </script>
 
-    <!-- ═══════════════════════════════════════════════════════════════
-         SCHEMA.ORG — BreadcrumbList
-    ════════════════════════════════════════════════════════════════ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -290,9 +285,6 @@
     }
     </script>
 
-    <!-- ═══════════════════════════════════════════════════════════════
-         SCHEMA.ORG — FAQPage enriquecida
-    ════════════════════════════════════════════════════════════════ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -358,9 +350,6 @@
     }
     </script>
 
-    <!-- ═══════════════════════════════════════════════════════════════
-         SCHEMA.ORG — WebSite con SearchAction (Sitelinks Search Box)
-    ════════════════════════════════════════════════════════════════ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -377,9 +366,6 @@
     }
     </script>
 
-    <!-- ═══════════════════════════════════════════════════════════════
-         SCHEMA.ORG — Organization
-    ════════════════════════════════════════════════════════════════ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -446,22 +432,204 @@
         .nav-links a.active { color: #ffd700; position: relative; }
         .nav-links a.active::after { content: ''; position: absolute; bottom: -5px; left: 0; right: 0; height: 2px; background: #ffd700; }
 
-        /* HERO */
-        .hero { background: linear-gradient(135deg, rgba(30,60,114,0.2) 0%, rgba(42,82,152,0.9) 50%, rgba(61,95,169,0.9) 100%), url('https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover; color: white; padding: 0 2rem; text-align: center; position: relative; overflow: hidden; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-        .hero-slider { position: relative; width: 100%; max-width: 900px; margin: 0 auto; }
-        .hero-slide { position: absolute; top: 0; left: 0; width: 100%; opacity: 0; transform: translateX(100%); transition: opacity 0.8s ease, transform 0.8s ease; pointer-events: none; }
-        .hero-slide.active { position: relative; opacity: 1; transform: translateX(0); pointer-events: auto; }
-        .hero-slide.exit { transform: translateX(-100%); }
-        .hero-content { position: relative; z-index: 1; }
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; animation: fadeInUp 1s ease; }
-        .hero p  { font-size: 1.3rem; margin-bottom: 2rem; animation: fadeInUp 1s ease 0.2s both; line-height: 1.8; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .cta-button { display: inline-block; padding: 15px 40px; background: #ffd700; color: #1e3c72; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; transition: all 0.3s; animation: fadeInUp 1s ease 0.4s both; box-shadow: 0 5px 15px rgba(255,215,0,0.3); border: none; cursor: pointer; }
-        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(255,215,0,0.4); background: #ffed4e; }
-        .slider-dots { display: flex; gap: 12px; justify-content: center; position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 2; padding: 0 1rem; }
-        .slider-dot { width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.4); cursor: pointer; transition: all 0.3s; border: 2px solid transparent; }
-        .slider-dot.active { background: #ffd700; border-color: white; transform: scale(1.2); }
-        .slider-dot:hover { background: rgba(255,215,0,0.7); }
+        /* ═══════════════════════════════════════════════════════
+           HERO — nuevo, sin carrusel
+        ════════════════════════════════════════════════════════ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Imagen de fondo */
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                url('https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=1920')
+                center / cover no-repeat;
+            z-index: 0;
+            animation: heroBgZoom 12s ease-out forwards;
+        }
+        @keyframes heroBgZoom {
+            from { transform: scale(1.06); }
+            to   { transform: scale(1); }
+        }
+
+        /* Overlay negro degradado hacia la derecha */
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                105deg,
+                rgba(0, 0, 0, 0.74) 0%,
+                rgba(0, 0, 0, 0.50) 55%,
+                rgba(0, 0, 0, 0.28) 100%
+            );
+        }
+
+        /* Contenido */
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8rem 2rem 7rem;
+            width: 100%;
+        }
+
+        /* Badge de ubicación */
+        .hero-eyebrow {
+            margin-bottom: 1.5rem;
+            animation: heroUp 0.8s ease both;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.35);
+            color: #ffd700;
+            padding: 0.4rem 1.1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* Título principal */
+        .hero-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.08;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+            animation: heroUp 0.8s ease 0.1s both;
+        }
+        .hero-title em {
+            font-style: normal;
+            color: #ffd700;
+        }
+
+        /* Subtítulo */
+        .hero-sub {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.70);
+            max-width: 500px;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            animation: heroUp 0.8s ease 0.2s both;
+        }
+
+        /* Pills de características */
+        .hero-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2.5rem;
+            animation: heroUp 0.8s ease 0.3s both;
+        }
+        .hero-chips span {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            color: rgba(255, 255, 255, 0.82);
+            padding: 0.38rem 1rem;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+
+        /* Botones de acción */
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            animation: heroUp 0.8s ease 0.4s both;
+        }
+        .hero-cta-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.2rem;
+            background: #ffd700;
+            color: #111;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.2px;
+            transition: all 0.25s;
+            box-shadow: 0 6px 24px rgba(255, 215, 0, 0.3);
+        }
+        .hero-cta-primary:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+        }
+        .hero-cta-secondary {
+            color: rgba(255, 255, 255, 0.72);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+            transition: color 0.2s;
+            letter-spacing: 0.2px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+            padding-bottom: 2px;
+        }
+        .hero-cta-secondary:hover { color: #ffd700; border-color: #ffd700; }
+
+        /* Barra inferior con datos clave */
+        .hero-stats {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.50);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            animation: heroUp 0.8s ease 0.55s both;
+        }
+        .hero-stat {
+            flex: 1;
+            max-width: 240px;
+            padding: 1.1rem 1.5rem;
+            text-align: center;
+            border-right: 1px solid rgba(255, 255, 255, 0.07);
+        }
+        .hero-stat:last-child { border-right: none; }
+        .hero-stat-value {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: #ffd700;
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+        .hero-stat-label {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.48);
+            font-weight: 500;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+        }
+
+        @keyframes heroUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
 
         /* SECTIONS */
         .features { padding: 80px 2rem; background: linear-gradient(rgba(248,249,250,0.7), rgba(248,249,250,0.95)), url('https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover; }
@@ -480,14 +648,7 @@
         .feature-icon svg { width: 40px; height: 40px; stroke: #ffd700; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
         .feature-card h3 { color: #1e3c72; margin-bottom: 1rem; font-size: 1.5rem; }
 
-        /* ═══════════════════════════════════════════════════════
-           SERVICES — IMAGEN CORREGIDA
-           Problema original: height:250px fijo + background-size:cover
-           causaba recorte en algunos aspectos y en mobile.
-           Solución: usar <img> real + object-fit:cover dentro de un
-           contenedor con aspect-ratio, así la imagen nunca se corta
-           y escala proporcionalmente.
-        ════════════════════════════════════════════════════════ */
+        /* SERVICES */
         .services { padding: 80px 2rem; background: linear-gradient(rgba(255,255,255,0.97), rgba(255,255,255,0.97)), url('https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover; }
         .service-card { display: flex; gap: 2rem; margin-bottom: 3rem; align-items: stretch; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 2rem; border-radius: 15px; transition: all 0.3s; }
         .service-card:hover { transform: scale(1.02); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
@@ -496,16 +657,13 @@
         .service-content ul { padding-left: 1.5rem; }
         .service-content ul li { margin-bottom: 0.5rem; color: #555; line-height: 1.6; }
 
-        /* Contenedor de imagen con aspect-ratio fijo — nunca se corta */
         .service-image-wrap {
             flex: 1;
             min-width: 0;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            /* aspect-ratio garantiza proporción 4:3 en cualquier pantalla */
             aspect-ratio: 4 / 3;
-            /* En desktop limitamos la altura máxima */
             max-height: 320px;
             align-self: center;
         }
@@ -515,7 +673,6 @@
             object-fit: cover;
             object-position: center;
             display: block;
-            /* Transición suave al hacer hover en la card */
             transition: transform 0.4s ease;
         }
         .service-card:hover .service-image-wrap img {
@@ -753,7 +910,6 @@
             .form-section { padding: 50px 1.25rem; }
             .fs-row { grid-template-columns: 1fr; }
 
-            /* En tablet las cards de servicio pasan a columna */
             .service-card,
             .service-card:nth-child(even) { flex-direction: column !important; }
             .service-image-wrap {
@@ -783,11 +939,16 @@
             .nav-links.active { transform: translateX(0); }
             .nav-links a { font-size: 1.2rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
             .nav-links a.active::after { display: none; }
-            .hero { padding: 0 1.25rem; min-height: 100svh; }
-            .hero h1 { font-size: 1.6rem; line-height: 1.2; margin-bottom: 0.75rem; }
-            .hero p  { font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.25rem; }
-            .cta-button { padding: 12px 28px; font-size: 0.95rem; }
-            .slider-dots { bottom: 15px; }
+
+            /* Hero mobile */
+            .hero-inner  { padding: 7rem 1.25rem 5.5rem; }
+            .hero-title  { font-size: 2.1rem; }
+            .hero-sub    { font-size: 0.95rem; max-width: 100%; }
+            .hero-stats  { display: none; }
+            .hero-chips  { gap: 0.4rem; }
+            .hero-chips span { font-size: 0.75rem; padding: 0.3rem 0.75rem; }
+            .hero-cta-primary { padding: 0.85rem 1.75rem; font-size: 0.95rem; }
+
             .section-title { font-size: 1.8rem; }
             .catalog-grid { grid-template-columns: 1fr; }
             .form-row { grid-template-columns: 1fr; }
@@ -795,7 +956,6 @@
             .modal-body { padding: 1.5rem; }
             .footer-section { width: 100%; }
 
-            /* Servicios mobile */
             .service-card { flex-direction: column !important; padding: 1.25rem !important; }
             .service-image-wrap {
                 width: 100%;
@@ -932,7 +1092,7 @@
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#ventajas">Ventajas</a></li>
             <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#catalogo">Catálogo</a></li>
+        
             <li><a href="#contacto">Contacto</a></li>
         </ul>
         <div class="nav-cta-buttons">
@@ -946,34 +1106,65 @@
 
 <!-- HERO -->
 <section id="inicio" class="hero">
-    <div class="hero-slider">
-        <div class="hero-slide active">
-            <div class="hero-content">
-                <h1>Cámaras de Seguridad Solares en Chile</h1>
-                <p>Protege tu hogar o negocio con tecnología de punta. Instalación profesional. Sin cables, con energía solar y monitoreo 24/7.</p>
-                <a href="#catalogo" class="cta-button">Cotización Gratuita</a>
-            </div>
+
+    <!-- Imagen de fondo -->
+    <div class="hero-bg" role="img" aria-label="Vista de campo rural chileno"></div>
+
+    <!-- Contenido -->
+    <div class="hero-inner">
+
+       
+
+        <h1 class="hero-title">
+            Instalación de cámaras solares<br>
+            para <em>parcelas y fundos</em>
+        </h1>
+
+        <p class="hero-sub">
+            Poste galvanizado con base de hormigón incluido.
+            Sin cables ni electricidad. 4G para zonas sin WiFi.
+        </p>
+
+        <div class="hero-chips">
+            <span>🌾 Parcelas &amp; fundos</span>
+            <span>📡 4G-WiFi</span>
+            <span>🌞 100% solar</span>
+            <span>🔧 Instalación completa</span>
         </div>
-        <div class="hero-slide">
-            <div class="hero-content">
-                <h1>Conoce Nuestro Catálogo</h1>
-                <p>Cámaras EZVIZ de última generación con instalación completa. Encuentra la solución perfecta para tus necesidades de seguridad con la mejor tecnología solar del mercado.</p>
-                <a href="#catalogo" class="cta-button">Ver Productos</a>
-            </div>
+
+        <div class="hero-actions">
+            <a href="#seccion-formulario"
+               class="hero-cta-primary"
+               onclick="smoothTo('seccion-formulario'); return false;">
+                Cotización gratuita
+            </a>
+            <a href="#catalogo" class="hero-cta-secondary">
+                Ver cámaras →
+            </a>
         </div>
-        <div class="hero-slide">
-            <div class="hero-content">
-                <h1>¿Sabías que Chile es uno de los líderes solares del mundo?</h1>
-                <p>Con la extraordinaria radiación del Desierto de Atacama Chile ha impulsado un crecimiento solar sin precedentes, logrando que cerca del <strong>50% de su capacidad eléctrica instalada provenga de energías renovables</strong>.</p>
-                <a href="#ventajas" class="cta-button">Conoce Más</a>
-            </div>
+
+    </div>
+
+    <!-- Barra inferior con datos clave -->
+    <div class="hero-stats" aria-hidden="true">
+        <div class="hero-stat">
+            <div class="hero-stat-value">Wifi</div>
+            <div class="hero-stat-label">Con panel solar</div>
+        </div>
+        <div class="hero-stat">
+            <div class="hero-stat-value">4G</div>
+            <div class="hero-stat-label">Con panel solar</div>
+        </div>
+        <div class="hero-stat">
+            <div class="hero-stat-value">24/7</div>
+            <div class="hero-stat-label">Monitoreo remoto</div>
+        </div>
+        <div class="hero-stat">
+            <div class="hero-stat-value">1er día</div>
+            <div class="hero-stat-label">Operativo desde el inicio</div>
         </div>
     </div>
-    <div class="slider-dots" role="tablist" aria-label="Diapositivas">
-        <span class="slider-dot active" data-slide="0" role="tab" aria-label="Diapositiva 1" tabindex="0"></span>
-        <span class="slider-dot" data-slide="1" role="tab" aria-label="Diapositiva 2" tabindex="0"></span>
-        <span class="slider-dot" data-slide="2" role="tab" aria-label="Diapositiva 3" tabindex="0"></span>
-    </div>
+
 </section>
 
 <!-- VENTAJAS -->
@@ -1037,7 +1228,6 @@
                 </ul>
                 <p style="margin-top:1rem;"><strong>Ideal para:</strong> Viñedos, parcelas, fundos, bodegas agrícolas, sitios de construcción, campos ganaderos e invernaderos.</p>
             </div>
-            <!-- IMAGEN CORREGIDA: <img> con object-fit en vez de background-image -->
             <div class="service-image-wrap">
                 <img
                     src="https://i.postimg.cc/05BxXCX4/Gemini-Generated-Image-1owf1r1owf1r1owf(1)(1).png"
@@ -1065,7 +1255,6 @@
                 </ul>
                 <p style="margin-top:1rem;"><strong>Ideal para:</strong> Casas, condominios, parcelas de agrado, entradas de vehículos, patios y jardines.</p>
             </div>
-            <!-- IMAGEN CORREGIDA -->
             <div class="service-image-wrap">
                 <img
                     src="https://i.postimg.cc/X7qK4n8p/Gemini-Generated-Image-9ezsqw9ezsqw9ezs(1).png"
@@ -1495,7 +1684,7 @@
         'Región de Valparaíso': [
             'Algarrobo','Cabildo','Calle Larga','Cartagena','Casablanca','Catemu','Concón',
             'El Quisco','El Tabo','Hijuelas','Isla de Pascua','Juan Fernández','La Calera',
-            'La Cruz','La Ligua','Limache','Llay-Llay','Los Andes','Nogales','Olmué',
+            'La Cruz','La Liga','Limache','Llay-Llay','Los Andes','Nogales','Olmué',
             'Panquehue','Papudo','Petorca','Puchuncaví','Putaendo','Quilpué','Quillota',
             'Quintero','Rinconada','San Antonio','San Esteban','San Felipe','Santa María',
             'Santo Domingo','Valparaíso','Villa Alemana','Viña del Mar','Zapallar'
@@ -1547,36 +1736,6 @@
                 window.scrollTo({ top: formSection.offsetTop - 80, behavior: 'smooth' });
             }, 300);
         }
-
-        // Hero Slider
-        var currentSlide = 0;
-        var slides = document.querySelectorAll('.hero-slide');
-        var dots   = document.querySelectorAll('.slider-dot');
-        var total  = slides.length;
-        var slideInterval;
-
-        function showSlide(index) {
-            slides.forEach(function(s) { s.classList.remove('active', 'exit'); });
-            dots.forEach(function(d)   { d.classList.remove('active'); });
-            slides[index].classList.add('active');
-            dots[index].classList.add('active');
-            currentSlide = index;
-        }
-        function nextSlide() {
-            slides[currentSlide].classList.add('exit');
-            showSlide((currentSlide + 1) % total);
-        }
-        function startSlider() { slideInterval = setInterval(nextSlide, 5000); }
-        function stopSlider()  { clearInterval(slideInterval); }
-
-        dots.forEach(function(dot, i) {
-            dot.addEventListener('click', function() { stopSlider(); showSlide(i); startSlider(); });
-        });
-        startSlider();
-
-        var hero = document.querySelector('.hero');
-        hero.addEventListener('mouseenter', stopSlider);
-        hero.addEventListener('mouseleave', startSlider);
 
         // Mobile menu
         var menuToggle = document.getElementById('menuToggle');
@@ -1655,7 +1814,6 @@
         var modal = document.getElementById('quoteModal');
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
-        // Focus management for accessibility
         modal.querySelector('.close').focus();
     }
 
