@@ -1325,14 +1325,13 @@
             </div>
 
             <form id="sectionForm"
-                  action="https://formsubmit.co/contacto@solarsecurity.cl"
-                  method="POST"
-                  onsubmit="return submitSectionForm(event)">
+      action="https://api.web3forms.com/submit"
+      method="POST"
+      onsubmit="return submitSectionForm(event)">
 
-                <input type="hidden" name="_subject"  value="🌞 Nueva Solicitud de Cotización — SolarSecurity.cl">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_captcha"  value="false">
-                <input type="hidden" name="_next"     value="https://www.solarsecurity.cl/?enviado=1#seccion-formulario">
+  <input type="hidden" name="access_key" value="f0dcb040-040b-4c60-b946-c024a534a4c2">
+  <input type="hidden" name="subject"    value="🌞 Nueva Solicitud de Cotización — SolarSecurity.cl">
+  <input type="hidden" name="redirect"   value="https://www.solarsecurity.cl/?enviado=1#seccion-formulario">
 
                 <div class="fs-row">
                     <div class="fs-group">
@@ -1425,16 +1424,16 @@
                 <h3 id="selectedProduct">Producto Seleccionado</h3>
                 <p id="selectedPrice" style="display:none;"></p>
             </div>
-            <form id="quoteForm"
-                  action="https://formsubmit.co/contacto@solarsecurity.cl"
-                  method="POST"
-                  onsubmit="return submitQuote(event)">
-                <input type="hidden" name="_subject"            value="🌞 Nueva Solicitud de Cotización — SolarSecurity.cl">
-                <input type="hidden" name="_template"           value="table">
-                <input type="hidden" name="_captcha"            value="false">
-                <input type="hidden" name="_next"               value="https://www.solarsecurity.cl/?enviado=2#catalogo">
-                <input type="hidden" name="Producto"            id="hiddenProduct">
-                <input type="hidden" name="Precio_referencial"  id="hiddenPrice">
+           <form id="quoteForm"
+      action="https://api.web3forms.com/submit"
+      method="POST"
+      onsubmit="return submitQuote(event)">
+
+  <input type="hidden" name="access_key" value="f0dcb040-040b-4c60-b946-c024a534a4c2">
+  <input type="hidden" name="subject"    value="🌞 Nueva Solicitud de Cotización — SolarSecurity.cl">
+  <input type="hidden" name="redirect"   value="https://www.solarsecurity.cl/?enviado=2#catalogo">
+  <input type="hidden" name="Producto"   id="hiddenProduct">
+  <input type="hidden" name="Precio_referencial" id="hiddenPrice">
 
                 <div class="form-row">
                     <div class="form-group">
