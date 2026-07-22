@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cotización — SolarSecurity.cl</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:      #1e3c72;
+  --navy-dark: #0f1f3d;
+  --blue:      #2a5298;
+  --gold:      #ffd700;
+  --gold-dark: #c8a800;
+  --gray-50:   #f8f9fa;
+  --gray-100:  #e9ecef;
+  --gray-200:  #dee2e6;
+  --gray-600:  #6c757d;
+  --gray-800:  #343a40;
+  --green:     #2d8a4e;
+  --radius:    12px;
+  --shadow-lg: 0 8px 40px rgba(30,60,114,0.16);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans','Segoe UI',sans-serif;background:#eef1f8;color:var(--gray-800);line-height:1.6;min-height:100vh;padding:2rem 1rem 4rem;}
+.doc{max-width:920px;margin:0 auto;background:white;border-radius:20px;box-shadow:var(--shadow-lg);overflow:hidden;}
+
+/* HEADER */
+.doc-header{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);padding:2.5rem 3rem 2rem;position:relative;overflow:hidden;}
+.doc-header::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;background:radial-gradient(circle,rgba(255,215,0,.12) 0%,transparent 65%);border-radius:50%;}
+.header-top{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;position:relative;z-index:1;}
+.brand{display:flex;align-items:center;gap:.9rem;}
+.sun{width:44px;height:44px;position:relative;animation:spin 20s linear infinite;flex-shrink:0;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.sun-circle{width:20px;height:20px;background:var(--gold);border-radius:50%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);box-shadow:0 0 18px rgba(255,215,0,.55);}
+.sun-ray{position:absolute;width:3px;height:11px;background:var(--gold);top:50%;left:50%;transform-origin:center;}
+.sun-ray:nth-child(2){transform:translate(-50%,-50%) rotate(0deg)   translateY(-14px);}
+.sun-ray:nth-child(3){transform:translate(-50%,-50%) rotate(45deg)  translateY(-14px);}
+.sun-ray:nth-child(4){transform:translate(-50%,-50%) rotate(90deg)  translateY(-14px);}
+.sun-ray:nth-child(5){transform:translate(-50%,-50%) rotate(135deg) translateY(-14px);}
+.sun-ray:nth-child(6){transform:translate(-50%,-50%) rotate(180deg) translateY(-14px);}
+.sun-ray:nth-child(7){transform:translate(-50%,-50%) rotate(225deg) translateY(-14px);}
+.sun-ray:nth-child(8){transform:translate(-50%,-50%) rotate(270deg) translateY(-14px);}
+.sun-ray:nth-child(9){transform:translate(-50%,-50%) rotate(315deg) translateY(-14px);}
+.brand-name{font-family:'Playfair Display',Georgia,serif;font-size:1.6rem;font-weight:800;color:white;line-height:1.1;}
+.doc-meta{text-align:right;}
+.doc-badge{display:inline-block;background:rgba(255,215,0,.15);border:1px solid rgba(255,215,0,.4);color:var(--gold);padding:.3rem 1rem;border-radius:50px;font-size:.72rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:.6rem;}
+.doc-date{font-size:.82rem;color:rgba(255,255,255,.55);}
+.header-divider{border:none;border-top:1px solid rgba(255,255,255,.12);margin:1.75rem 0 1.5rem;position:relative;z-index:1;}
+.header-client{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;position:relative;z-index:1;}
+.client-label{font-size:.68rem;font-weight:700;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.7px;margin-bottom:.4rem;}
+.editable{display:inline-block;border-bottom:1.5px dashed rgba(255,215,0,.4);min-width:140px;padding-bottom:1px;color:rgba(255,255,255,.75);cursor:text;outline:none;font-size:.95rem;font-weight:500;transition:border-color .2s;}
+.editable:focus{border-color:var(--gold);color:white;}
+.editable:empty::before{content:attr(data-placeholder);color:rgba(255,255,255,.35);font-style:italic;}
+
+.doc-body{padding:2.5rem 3rem;}
+
+.section-label{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;}
+.section-label-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.section-label-icon svg{width:17px;height:17px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.section-label h2{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;color:var(--navy);}
+.section-label p{font-size:.8rem;color:var(--gray-600);margin-top:.1rem;}
+
+.options-intro{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius);padding:1rem 1.5rem;margin-bottom:2rem;font-size:.88rem;color:var(--gray-600);display:flex;align-items:flex-start;gap:.7rem;}
+.options-intro svg{width:18px;height:18px;stroke:var(--blue);fill:none;stroke-width:2;flex-shrink:0;margin-top:2px;}
+
+/* OPTION CARDS */
+.option-card{border:2px solid var(--gray-200);border-radius:16px;overflow:hidden;margin-bottom:1.75rem;transition:box-shadow .3s;}
+.option-card:hover{box-shadow:var(--shadow-lg);}
+.option-header{padding:1.1rem 1.75rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;background:linear-gradient(135deg,#f0f7ff,#e4effe);border-bottom:2px solid #c4d8f8;}
+.option-pill{padding:.4rem 1.1rem;border-radius:50px;font-size:.78rem;font-weight:800;letter-spacing:.5px;text-transform:uppercase;flex-shrink:0;background:var(--navy);color:white;}
+.option-title{font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:700;color:var(--navy);}
+.option-body{display:grid;grid-template-columns:190px 1fr;gap:1.5rem;padding:1.5rem 1.75rem;align-items:center;}
+.option-img-wrap{background:#f0f4f8;border-radius:10px;display:flex;align-items:center;justify-content:center;padding:.75rem;height:150px;}
+.option-img-wrap img{max-height:130px;max-width:100%;object-fit:contain;}
+.option-desc{font-size:.86rem;color:var(--gray-800);}
+.option-desc ul{margin:.5rem 0 0 1.1rem;padding:0;}
+.option-desc li{margin-bottom:.3rem;}
+.option-price-row{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 1.75rem;background:linear-gradient(135deg,var(--navy),var(--blue));}
+.option-price-label{font-family:'Playfair Display',Georgia,serif;font-size:1rem;font-weight:700;color:white;}
+.option-price-value{font-family:'Playfair Display',Georgia,serif;font-size:1.4rem;font-weight:800;color:var(--gold);}
+
+.connectivity-note{display:flex;gap:.5rem;padding:.7rem 1.75rem;background:rgba(0,0,0,.02);border-bottom:1px solid var(--gray-100);flex-wrap:wrap;align-items:center;font-size:.78rem;color:var(--gray-600);}
+.conn-chip{display:inline-flex;align-items:center;gap:.3rem;padding:.22rem .7rem;border-radius:50px;font-size:.72rem;font-weight:700;background:rgba(30,60,114,.08);color:var(--navy);border:1px solid rgba(30,60,114,.2);}
+
+.section-divider{border:none;border-top:2px dashed var(--gray-200);margin:2rem 0;}
+
+/* COMPARE TABLE */
+.compare-wrap{overflow-x:auto;margin-bottom:2rem;}
+.compare-table{width:100%;border-collapse:collapse;font-size:.85rem;}
+.compare-table th{padding:.7rem 1rem;text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;color:var(--gray-600);font-weight:700;border-bottom:2px solid var(--gray-200);background:var(--gray-50);}
+.compare-table th.opt{background:rgba(30,60,114,.06);color:var(--navy);border-bottom:2px solid rgba(30,60,114,.2);text-align:center;}
+.compare-table td{padding:.55rem 1rem;border-bottom:1px solid var(--gray-100);}
+.compare-table td.feature{font-weight:600;color:var(--gray-800);}
+.compare-table td.opt{background:rgba(30,60,114,.018);color:var(--navy);font-weight:600;text-align:center;}
+.compare-table .total-compare td{border-top:2px solid var(--gray-200);font-weight:800;font-size:.92rem;padding:.9rem 1rem;}
+.compare-table .total-compare td.feature{background:var(--gray-100);}
+.compare-table .total-compare td.opt{background:rgba(30,60,114,.1);}
+
+/* INSTALL / NOTES */
+.install-box{background:linear-gradient(135deg,#f0f4ff,#e8effe);border:1.5px solid rgba(30,60,114,.15);border-radius:var(--radius);padding:1.5rem;margin-top:1rem;}
+.install-box h4{color:var(--navy);font-size:.9rem;font-weight:700;margin-bottom:.9rem;}
+.install-item{display:flex;align-items:flex-start;gap:.45rem;font-size:.8rem;color:var(--gray-800);margin-bottom:.38rem;}
+.install-item::before{content:'✓';background:var(--navy);color:var(--gold);border-radius:50%;width:15px;height:15px;font-size:.55rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;font-weight:700;}
+
+.note-box{border-radius:var(--radius);padding:.875rem 1.25rem;margin-bottom:1.25rem;font-size:.82rem;display:flex;gap:.6rem;align-items:flex-start;}
+.note-warn{background:#fffbf0;border:1.5px solid rgba(200,168,0,.3);color:#7a6000;}
+.note-box svg{width:16px;height:16px;fill:none;stroke-width:2;flex-shrink:0;margin-top:2px;stroke:#c8a800;}
+
+.terms-box{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius);padding:1.5rem;margin-top:2rem;}
+.terms-box h4{font-size:.78rem;font-weight:700;color:var(--navy);margin-bottom:.875rem;text-transform:uppercase;letter-spacing:.4px;}
+.terms-list{list-style:none;display:flex;flex-direction:column;gap:.42rem;}
+.terms-list li{font-size:.79rem;color:var(--gray-600);padding-left:1rem;position:relative;}
+.terms-list li::before{content:'·';position:absolute;left:0;color:var(--gold-dark);font-weight:900;font-size:1rem;top:-2px;}
+
+/* FOOTER */
+.doc-footer{background:var(--navy-dark);padding:1.75rem 3rem;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+.doc-footer-brand{display:flex;align-items:center;gap:.6rem;}
+.doc-footer-brand span{font-family:'Playfair Display',Georgia,serif;font-size:1rem;font-weight:700;color:white;}
+.doc-footer-contact{text-align:right;}
+.doc-footer-contact a{color:rgba(255,255,255,.6);font-size:.8rem;text-decoration:none;display:block;}
+
+@media print{
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;color-adjust:exact!important;}
+  html,body{background:white;padding:0;margin:0;width:100%;}
+  .doc{max-width:100%;width:100%;margin:0;border-radius:0;box-shadow:none;overflow:visible;}
+  .doc-header,.doc-body,.doc-footer{padding-left:1.4cm;padding-right:1.4cm;}
+  .doc-header{padding-top:1.2cm;padding-bottom:1rem;}
+  .doc-body{padding-top:1.25rem;padding-bottom:1rem;}
+  .sun{animation:none!important;}
+  .doc-header::before{display:none;}
+  .option-card,.compare-wrap,.install-box,.note-box,.options-intro,.spec-card{
+    page-break-inside:avoid;break-inside:avoid;
+  }
+  .compare-table tr{page-break-inside:avoid;break-inside:avoid;}
+  .option-card{margin-bottom:1.1rem;}
+  .section-divider{margin:1.2rem 0;}
+  a{color:inherit;text-decoration:none;}
+  @page{margin:1cm;size:A4;}
+}
+@media(max-width:700px){
+  .doc-header,.doc-body,.doc-footer{padding-left:1.5rem;padding-right:1.5rem;}
+  .header-top,.doc-footer{flex-direction:column;}
+  .doc-meta,.doc-footer-contact{text-align:left;}
+  .header-client{grid-template-columns:1fr;}
+  .option-body{grid-template-columns:1fr;}
+  .compare-table th,.compare-table td{padding:.5rem .6rem;font-size:.76rem;}
+}
+</style>
+</head>
+<body>
+
+<div class="doc">
+
+  <!-- HEADER -->
+  <div class="doc-header">
+    <div class="header-top">
+      <div class="brand">
+        <div class="sun" aria-hidden="true">
+          <div class="sun-circle"></div>
+          <div class="sun-ray"></div><div class="sun-ray"></div><div class="sun-ray"></div>
+          <div class="sun-ray"></div><div class="sun-ray"></div><div class="sun-ray"></div>
+          <div class="sun-ray"></div><div class="sun-ray"></div>
+        </div>
+        <div class="brand-name">SolarSecurity.cl</div>
+      </div>
+      <div class="doc-meta">
+      </div>
+    </div>
+    <hr class="header-divider">
+    <div class="header-client">
+      <div>
+        <div class="client-label">Cliente</div>
+        <div class="editable" contenteditable="true" data-placeholder="Nombre del cliente"></div>
+      </div>
+      <div>
+        <div class="client-label">Proyecto / Propiedad</div>
+        <div class="editable" contenteditable="true" data-placeholder="Ej: Parcela-vivienda"></div>
+      </div>
+      <div>
+        <div class="client-label">Correo</div>
+        <div class="editable" contenteditable="true" data-placeholder="correo@ejemplo.cl"></div>
+      </div>
+      <div>
+        <div class="client-label">Teléfono</div>
+        <div class="editable" contenteditable="true" data-placeholder="+56 9 XXXX XXXX"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-body">
+
+    <div class="note-box note-warn" style="background:linear-gradient(135deg,#f0f4ff,#e8effe);border:1.5px solid rgba(30,60,114,.2);color:var(--navy);">
+      <svg viewBox="0 0 24 24" stroke="#1e3c72"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      <div><strong>La gran ventaja de estos modelos es su autonomía total:</strong> al funcionar con batería propia,
+      panel solar e internet móvil (4G) independiente de la red del hogar, las cámaras siguen operando aunque se corte
+      la luz, se corte el internet o incluso si un intruso desconecta el router o corta el suministro eléctrico de la
+      propiedad. Esto las hace especialmente confiables frente a robos, ya que la vigilancia y el envío de alertas no
+      dependen de la energía ni la conexión a internet de la casa.</div>
+    </div>
+
+    <div class="options-intro">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      <div>
+        Se presentan <strong>4 modelos de cámara solar con batería y conectividad 4G</strong> para la instalación
+        de tu punto de vigilancia, cada una con distinto nivel de prestaciones. El valor de cada opción es un
+        <strong>precio cerrado</strong> que incluye el equipo más la instalación y configuración completa.
+        Las 4 opciones traen <strong>panel solar incluido</strong> en el kit y también pueden alimentarse
+        <strong>directo a la corriente</strong> mediante cable, como alternativa a la carga solar. Además, las 4 cuentan con
+        <strong>defensa activa (sirena y luces estroboscópicas)</strong> ante intrusos. Todas admiten conexión por
+        <strong>4G LTE</strong> o <strong>WiFi</strong> según disponibilidad en el lugar.
+      </div>
+    </div>
+
+    <!-- OPCIÓN 1 -->
+    <div class="option-card">
+      <div class="option-header">
+        <span class="option-pill">Opción 1</span>
+        <div class="option-title">Cámara solar con batería 4G</div>
+      </div>
+      <div class="connectivity-note">
+        <span class="conn-chip">📡 4G independiente</span>
+        <span style="color:var(--gray-600);">· No requiere WiFi ni internet fijo</span>
+      </div>
+      <div class="option-body">
+        <div class="option-img-wrap">
+          <img src="https://www.ezvizstore.cl/cdn/shop/files/EB3.png?v=1773769655" alt="Opción 1 - cámara solar 4G" onerror="this.style.display='none'">
+        </div>
+        <div class="option-desc">
+          Modelo de entrada pensado para vigilancia sin cables en cualquier ubicación, con conectividad 4G
+          independiente para monitoreo remoto en tiempo real.
+          <ul>
+            <li>Batería de larga duración con panel solar incluido en el kit (también se puede alimentar directo a la corriente)</li>
+            <li>Defensa activa: sirena potente y luces estroboscópicas ante intrusos</li>
+            <li>Detección inteligente de personas, visión nocturna y grabación en alta definición</li>
+            <li>Instalación flexible, sin obras · control y alertas desde app móvil</li>
+          </ul>
+        </div>
+      </div>
+      <div class="option-price-row">
+        <span class="option-price-label">Total instalado — Opción 1</span>
+        <span class="option-price-value">$213.990</span>
+      </div>
+    </div>
+
+    <!-- OPCIÓN 2 -->
+    <div class="option-card">
+      <div class="option-header">
+        <span class="option-pill">Opción 2</span>
+        <div class="option-title">Cámara solar con batería 4G/WiFi</div>
+      </div>
+      <div class="connectivity-note">
+        <span class="conn-chip">📡 4G / 📶 WiFi</span>
+        <span style="color:var(--gray-600);">· Conectividad dual según disponibilidad</span>
+      </div>
+      <div class="option-body">
+        <div class="option-img-wrap">
+          <img src="https://www.ezvizstore.cl/cdn/shop/files/37b44acb3e8e6532fa81e44028c283b8_middle.png?v=1776198283" alt="Opción 2 - cámara solar 4G/WiFi" onerror="this.style.display='none'">
+        </div>
+        <div class="option-desc">
+          Kit inalámbrico completo que combina conectividad 4G y WiFi para mayor flexibilidad de conexión,
+          con giro motorizado de 360° para cobertura total, pensado para casas, negocios o terrenos remotos.
+          <ul>
+            <li>Panel solar de 5W incluido que mantiene la batería cargada de forma continua (también admite alimentación directa a la corriente)</li>
+            <li>Defensa activa: sirena y luces estroboscópicas ante intrusos</li>
+            <li>Detección inteligente de personas y vehículos, video en alta definición con visión nocturna para monitoreo 24/7</li>
+            <li>Sistema resistente a condiciones climáticas adversas · acceso remoto vía app móvil</li>
+          </ul>
+        </div>
+      </div>
+      <div class="option-price-row">
+        <span class="option-price-label">Total instalado — Opción 2</span>
+        <span class="option-price-value">$228.990</span>
+      </div>
+    </div>
+
+    <!-- OPCIÓN 3 -->
+    <div class="option-card">
+      <div class="option-header">
+        <span class="option-pill">Opción 3</span>
+        <div class="option-title">Cámara solar 4K con batería 4G/WiFi</div>
+      </div>
+      <div class="connectivity-note">
+        <span class="conn-chip">📡 4G / 📶 WiFi</span>
+        <span style="color:var(--gray-600);">· Conectividad dual según disponibilidad</span>
+      </div>
+      <div class="option-body">
+        <div class="option-img-wrap">
+          <img src="https://www.ezvizstore.cl/cdn/shop/files/H9C_52.png?v=1776185762" alt="Opción 3 - cámara solar 4K" onerror="this.style.display='none'">
+        </div>
+        <div class="option-desc">
+          Modelo de gama alta con resolución Ultra HD 4K, pensado para quienes buscan el mayor nivel de
+          detalle y prestaciones de seguridad activa.
+          <ul>
+            <li>Panel solar de 8W incluido en el kit (también admite alimentación directa a la corriente)</li>
+            <li>Visión panorámica de 360° con seguimiento inteligente</li>
+            <li>Detección de personas y vehículos por IA</li>
+            <li>Defensa activa: sirena y luces estroboscópicas, más audio bidireccional</li>
+          </ul>
+        </div>
+      </div>
+      <div class="option-price-row">
+        <span class="option-price-label">Total instalado — Opción 3</span>
+        <span class="option-price-value">$278.990</span>
+      </div>
+    </div>
+
+    <!-- OPCIÓN 4 -->
+    <div class="option-card">
+      <div class="option-header">
+        <span class="option-pill">Opción 4</span>
+        <div class="option-title">Cámara solar doble lente con batería 4G/WiFi</div>
+      </div>
+      <div class="connectivity-note">
+        <span class="conn-chip">📡 4G (Nano SIM) / 📶 WiFi</span>
+        <span style="color:var(--gray-600);">· Conectividad dual según disponibilidad</span>
+      </div>
+      <div class="option-body">
+        <div class="option-img-wrap">
+          <img src="https://www.ezvizstore.cl/cdn/shop/files/camara-pt-4g-hb90x-doble-lente-2k-2k-con-panel-solar-y-bateria-smart-tracking-cs-hb90xsp-r100-ezviz-1.jpg?v=1773769053" alt="Opción 4 - cámara solar doble lente" onerror="this.style.display='none'">
+        </div>
+        <div class="option-desc">
+          Modelo profesional de doble lente, ideal para parcelas, obras en construcción o zonas rurales
+          sin cableado ni internet fijo.
+          <ul>
+            <li>Panel solar incluido en el kit, compatible además con alimentación directa a la corriente</li>
+            <li>Resolución 2K con sensor de 4MP para imágenes nítidas día y noche, doble lente</li>
+            <li>Batería de gran capacidad (10.400 mAh) para autonomía extendida</li>
+            <li>Visión nocturna a color y detección inteligente de personas (evita falsas alarmas)</li>
+            <li>Defensa activa: sirena potente y destellos de luz ante intrusión</li>
+          </ul>
+        </div>
+      </div>
+      <div class="option-price-row">
+        <span class="option-price-label">Total instalado — Opción 4</span>
+        <span class="option-price-value">$301.990</span>
+      </div>
+    </div>
+
+    <!-- RESUMEN COMPARATIVO -->
+    <div class="section-label">
+      <div class="section-label-icon">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      </div>
+      <div>
+        <h2>Resumen comparativo</h2>
+        <p>Valor total instalado por opción</p>
+      </div>
+    </div>
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th style="width:34%"></th>
+            <th class="opt">Opción 1</th>
+            <th class="opt">Opción 2</th>
+            <th class="opt">Opción 3</th>
+            <th class="opt">Opción 4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="feature">Resolución</td><td class="opt">2K</td><td class="opt">2K+</td><td class="opt">4K</td><td class="opt">2K</td></tr>
+          <tr><td class="feature">Conectividad</td><td class="opt">4G</td><td class="opt">4G / WiFi</td><td class="opt">4G / WiFi</td><td class="opt">4G / WiFi</td></tr>
+          <tr><td class="feature">Panel solar</td><td class="opt">Incluido</td><td class="opt">Incluido (5W)</td><td class="opt">Incluido (8W)</td><td class="opt">Incluido</td></tr>
+          <tr><td class="feature">Alimentación alterna</td><td class="opt">Corriente (cable)</td><td class="opt">Corriente (cable)</td><td class="opt">Corriente (cable)</td><td class="opt">Corriente (cable)</td></tr>
+          <tr><td class="feature">Detección IA</td><td class="opt">Personas</td><td class="opt">Personas / vehículos</td><td class="opt">Personas / vehículos</td><td class="opt">Personas</td></tr>
+          <tr><td class="feature">Defensa activa</td><td class="opt">Sirena y luces</td><td class="opt">Sirena y luces</td><td class="opt">Sirena y luces</td><td class="opt">Sirena y luces</td></tr>
+          <tr><td class="feature">Autonomía ante corte de luz/internet</td><td class="opt">Total</td><td class="opt">Total</td><td class="opt">Total</td><td class="opt">Total</td></tr>
+        </tbody>
+        <tbody>
+          <tr class="total-compare">
+            <td class="feature">TOTAL INSTALADO</td>
+            <td class="opt">$213.990</td>
+            <td class="opt">$228.990</td>
+            <td class="opt">$278.990</td>
+            <td class="opt">$301.990</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note-box note-warn">
+      <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <div><strong>Si se elige conectividad 4G LTE:</strong> se requiere Nano-SIM con plan de datos activo
+      (Entel, Movistar, Claro o WOM), no incluida en esta cotización. Se recomienda mínimo 3–5 GB/mes.
+      SolarSecurity.cl verifica cobertura 4G en el punto de instalación sin costo adicional previo a la instalación.</div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- QUÉ INCLUYE -->
+    <div class="install-box">
+      <h4>Qué incluye cada opción</h4>
+      <div class="install-item">Equipo original con garantía</div>
+      <div class="install-item">Panel solar incluido en el kit (también admite conexión directa a la corriente)</div>
+      <div class="install-item">Defensa activa: sirena y luces estroboscópicas configuradas</div>
+      <div class="install-item">Funcionamiento autónomo con batería + internet móvil, independiente de la luz o el WiFi de la casa</div>
+      <div class="install-item">Instalación y anclaje en el punto acordado</div>
+      <div class="install-item">Orientación óptima del panel solar</div>
+      <div class="install-item">Configuración de conectividad (4G o WiFi)</div>
+      <div class="install-item">Programación de alertas y zonas de detección</div>
+      <div class="install-item">Capacitación en la app de la cámara</div>
+      <div class="install-item">Soporte técnico primer mes</div>
+    </div>
+
+  </div><!-- /doc-body -->
+
+  <div class="doc-footer">
+    <div class="doc-footer-brand">
+      <div class="sun" style="width:30px;height:30px;" aria-hidden="true">
+        <div class="sun-circle" style="width:13px;height:13px;"></div>
+        <div class="sun-ray"></div><div class="sun-ray"></div><div class="sun-ray"></div>
+        <div class="sun-ray"></div><div class="sun-ray"></div><div class="sun-ray"></div>
+        <div class="sun-ray"></div><div class="sun-ray"></div>
+      </div>
+      <span>SolarSecurity.cl</span>
+    </div>
+    <div class="doc-footer-contact">
+      <a href="mailto:contacto@solarsecurity.cl">contacto@solarsecurity.cl</a>
+      <a href="https://www.solarsecurity.cl">www.solarsecurity.cl</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+document.querySelectorAll('.editable').forEach(el=>{
+  el.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();el.blur();}});
+});
+</script>
+</body>
+</html>
