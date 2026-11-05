@@ -1,6 +1,6 @@
 # SolarSecurity.cl
 
-> Empresa chilena 100% online (sin oficina ni local de atención presencial) especialista en instalación de cámaras de seguridad solares EZVIZ. La cotización y coordinación se hacen por WhatsApp, email o formulario web; el equipo técnico va directamente a instalar en la propiedad del cliente.
+> Empresa chilena 100% online (sin oficina ni local de atención presencial) que instala cámaras de seguridad solares en la propiedad del cliente. La cotización es gratuita y se pide por WhatsApp, email o formulario web; el equipo técnico va directamente a instalar.
 
 ## Zona de cobertura
 Instalación disponible únicamente en Chile, en las siguientes regiones:
@@ -12,24 +12,28 @@ Instalación disponible únicamente en Chile, en las siguientes regiones:
 No se realizan instalaciones fuera de estas cuatro regiones.
 
 ## Qué hace la empresa
-Instala cámaras de seguridad solares (marca EZVIZ) con panel fotovoltaico, en poste metálico galvanizado con base de hormigón incluida, con conectividad 4G LTE (para lugares sin WiFi) o WiFi. También diseña proyectos multi-cámara con antenas de largo alcance y batería de respaldo para condominios, viñedos, fundos y parques industriales.
+Instala cámaras de seguridad solares con panel fotovoltaico y batería, en poste metálico galvanizado con base de hormigón incluida, con conectividad 4G LTE (para lugares sin WiFi) o WiFi. También diseña proyectos multi-cámara con antenas de largo alcance y batería de respaldo para condominios, viñedos, fundos y parques industriales.
 
-## Contacto
-- WhatsApp: +56 9 4405 0063 (https://wa.me/56944050063)
+Cada instalación se cotiza a medida según la propiedad (número de cámaras, conectividad, altura del poste y distancias). No hay catálogo ni venta de equipos sin instalación.
+
+## La instalación incluye
+- Cámara solar con panel, con garantía del fabricante
+- Poste metálico galvanizado con base de hormigón
+- Montaje, nivelación y orientación del panel
+- Configuración de WiFi o 4G, alertas y zonas de detección
+- Capacitación en la app
+- Soporte técnico durante el primer mes
+
+## Cómo cotizar
+- WhatsApp: +56 9 5781 7711 (https://wa.me/56957817711)
 - Email: contacto@solarsecurity.cl
 - Formulario de cotización: https://www.solarsecurity.cl/#seccion-formulario
-- Sin oficina física ni atención presencial: todo el contacto es remoto (WhatsApp/email/formulario).
-
-## Productos (catálogo)
-- EZVIZ EB3 4G Bullet Solar — cámara bullet 2K con 4G LTE, para zonas sin WiFi.
-- EZVIZ EB3 WiFi Bullet Solar — cámara bullet 2K con WiFi.
-- EZVIZ EB8 4G PTZ Solar — cámara PTZ 360° con 4G LTE, seguimiento automático.
-- EZVIZ CB8 Lite WiFi Solar — cámara económica 4MP con WiFi.
-- Sistema Multi-Cámara EZVIZ — proyecto personalizable de 2 o más cámaras con antenas de largo alcance y batería de respaldo.
+- Respuesta en menos de 24 horas. Todo el contacto es remoto (WhatsApp, email o formulario).
 
 ## Páginas
-- [Inicio](https://www.solarsecurity.cl/): resumen de la propuesta y ventajas de las cámaras solares.
-- [Servicios](https://www.solarsecurity.cl/#servicios): instalación rural (parcelas, viñedos, fundos) e instalación residencial/condominios.
-- [Proyecto Multi-Cámara](https://www.solarsecurity.cl/#proyecto-multicamara): sistemas de varias cámaras con antenas de largo alcance para condominios y grandes propiedades.
-- [Catálogo](https://www.solarsecurity.cl/#catalogo): listado de cámaras disponibles con precios referenciales en CLP.
-- [Contacto](https://www.solarsecurity.cl/#contacto): WhatsApp y email.
+- [Inicio](https://www.solarsecurity.cl/): propuesta y cotización gratuita.
+- [Cómo funciona](https://www.solarsecurity.cl/#como-funciona): pasos desde la cotización hasta la cámara funcionando.
+- [Servicios](https://www.solarsecurity.cl/#servicios): instalación rural (parcelas, viñedos, fundos) y residencial o en condominios.
+- [Proyecto Multi-Cámara](https://www.solarsecurity.cl/#proyecto-multicamara): sistemas de varias cámaras con antenas de largo alcance para grandes propiedades.
+- [Cotización](https://www.solarsecurity.cl/#seccion-formulario): formulario para pedir la cotización.
+- [Preguntas frecuentes](https://www.solarsecurity.cl/#preguntas): precios, conectividad, cobertura y qué incluye la instalación.

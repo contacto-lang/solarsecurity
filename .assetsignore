@@ -1,0 +1,4 @@
+# Archivos del repositorio que no deben publicarse en el sitio
+.git
+.assetsignore
+wrangler.jsonc
