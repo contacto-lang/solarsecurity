@@ -2,3 +2,5 @@
 .git
 .assetsignore
 wrangler.jsonc
+# Plantilla interna de cotización: se queda en el repo pero no se publica
+prueba.html

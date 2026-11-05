@@ -36,4 +36,8 @@ Cada instalación se cotiza a medida según la propiedad (número de cámaras, c
 - [Servicios](https://www.solarsecurity.cl/#servicios): instalación rural (parcelas, viñedos, fundos) y residencial o en condominios.
 - [Proyecto Multi-Cámara](https://www.solarsecurity.cl/#proyecto-multicamara): sistemas de varias cámaras con antenas de largo alcance para grandes propiedades.
 - [Cotización](https://www.solarsecurity.cl/#seccion-formulario): formulario para pedir la cotización.
+- [Zona de instalación](https://www.solarsecurity.cl/#cobertura): regiones y principales comunas donde se instala.
 - [Preguntas frecuentes](https://www.solarsecurity.cl/#preguntas): precios, conectividad, cobertura y qué incluye la instalación.
+
+## Más información
+- [Información completa](https://www.solarsecurity.cl/llms-full.txt): todo el contenido del sitio en texto plano, incluidas las preguntas frecuentes.

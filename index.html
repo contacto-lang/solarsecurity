@@ -9,12 +9,14 @@
     <meta name="keywords" content="instalación cámaras solares, cotizar cámaras de seguridad, cámaras solares Chile, cámaras 4G parcelas, seguridad para condominios, cámaras para viñedos, vigilancia rural Chile, poste galvanizado cámara solar, sistema multi-cámara solar">
     <meta name="author" content="SolarSecurity.cl">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="format-detection" content="telephone=no">
     <meta name="theme-color" content="#0B1220">
     <meta name="geo.region" content="CL">
     <meta name="geo.placename" content="Región Metropolitana, Valparaíso, O'Higgins, Maule, Chile">
 
     <link rel="canonical" href="https://www.solarsecurity.cl/">
     <link rel="alternate" hreflang="es-cl" href="https://www.solarsecurity.cl/">
+    <link rel="alternate" hreflang="x-default" href="https://www.solarsecurity.cl/">
     <link rel="sitemap" type="application/xml" href="https://www.solarsecurity.cl/sitemap.xml">
 
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -78,8 +80,25 @@
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Proyecto de vigilancia solar multi-cámara con antenas de largo alcance", "serviceType": "Proyecto de vigilancia multi-cámara" } }
       ],
       "sameAs": ["https://www.instagram.com/solarsecurity.cl"],
-      "slogan": "Seguridad solar sin límites para tu propiedad"
+      "slogan": "Seguridad solar sin límites para tu propiedad",
+      "knowsAbout": ["Cámaras de seguridad solares", "Cámaras 4G para zonas rurales", "Seguridad para parcelas y fundos", "Seguridad para condominios", "Vigilancia de viñedos", "Sistemas multi-cámara con antenas de largo alcance"]
     }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@graph": [
+      { "@type": "WebSite", "@id": "https://www.solarsecurity.cl/#website", "url": "https://www.solarsecurity.cl/", "name": "SolarSecurity.cl", "inLanguage": "es-CL", "publisher": { "@id": "https://www.solarsecurity.cl/#organization" } },
+      { "@type": "WebPage", "@id": "https://www.solarsecurity.cl/#webpage", "url": "https://www.solarsecurity.cl/", "name": "Instalación de Cámaras Solares en Chile — Cotiza Gratis", "isPartOf": { "@id": "https://www.solarsecurity.cl/#website" }, "about": { "@id": "https://www.solarsecurity.cl/#organization" }, "inLanguage": "es-CL", "dateModified": "2026-11-05", "primaryImageOfPage": "https://i.postimg.cc/05BxXCX4/Gemini-Generated-Image-1owf1r1owf1r1owf(1)(1).png" },
+      { "@type": "Service", "@id": "https://www.solarsecurity.cl/#servicio", "name": "Instalación de cámaras de seguridad solares", "serviceType": "Instalación de cámaras de seguridad solar", "provider": { "@id": "https://www.solarsecurity.cl/#organization" },
+        "description": "Instalación de cámaras de seguridad con panel solar y batería, en poste metálico galvanizado con base de hormigón, con conectividad 4G o WiFi. Incluye configuración de alertas, capacitación en la app y soporte el primer mes. Cotización gratuita y a medida.",
+        "audience": { "@type": "Audience", "audienceType": "Propietarios de parcelas, fundos, viñedos, condominios, casas, bodegas y empresas" },
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "Región Metropolitana de Santiago" }, { "@type": "AdministrativeArea", "name": "Región de Valparaíso" }, { "@type": "AdministrativeArea", "name": "Región del Libertador General Bernardo O'Higgins" }, { "@type": "AdministrativeArea", "name": "Región del Maule" },
+          { "@type": "City", "name": "Santiago" }, { "@type": "City", "name": "Colina" }, { "@type": "City", "name": "Lampa" }, { "@type": "City", "name": "Buin" }, { "@type": "City", "name": "Paine" }, { "@type": "City", "name": "Talagante" }, { "@type": "City", "name": "Melipilla" },
+          { "@type": "City", "name": "San Felipe" }, { "@type": "City", "name": "Los Andes" }, { "@type": "City", "name": "Casablanca" }, { "@type": "City", "name": "Quillota" }, { "@type": "City", "name": "Viña del Mar" },
+          { "@type": "City", "name": "Rancagua" }, { "@type": "City", "name": "Rengo" }, { "@type": "City", "name": "San Fernando" }, { "@type": "City", "name": "Santa Cruz" },
+          { "@type": "City", "name": "Talca" }, { "@type": "City", "name": "Curicó" }, { "@type": "City", "name": "Linares" } ],
+        "offers": { "@type": "Offer", "priceCurrency": "CLP", "availability": "https://schema.org/InStock", "description": "Precio según cotización gratuita" } }
+    ] }
     </script>
     <script type="application/ld+json">
     { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
@@ -321,6 +340,13 @@
         .spinner { width: 16px; height: 16px; border: 2.5px solid rgba(255,255,255,0.35); border-top-color: #fff; border-radius: 50%; animation: spin 0.7s linear infinite; display: inline-block; }
         @keyframes spin { to { transform: rotate(360deg); } }
 
+        /* COBERTURA */
+        .regions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; }
+        .region { padding: 1.5rem; }
+        .region h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; margin-bottom: 0.45rem; color: var(--blue-deep); }
+        .region p { color: var(--ink-soft); font-size: 0.9rem; }
+        .regions-note { text-align: center; color: var(--ink-faint); font-size: 0.86rem; margin-top: 1.4rem; }
+
         /* FAQ */
         .faq { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.75rem; }
         .faq details { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-md); }
@@ -369,7 +395,7 @@
         @media (max-width: 1024px) {
             .nav-links { gap: 1.1rem; }
             .steps { grid-template-columns: repeat(2, 1fr); }
-            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .features-grid, .regions { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 900px) {
             .service-card, .service-card.reverse { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -418,7 +444,7 @@
 
             .section { padding: 56px 1rem; }
             .section-head { margin-bottom: 2rem; }
-            .steps, .features-grid, .includes-grid, .ticks, .mp-specs { grid-template-columns: 1fr; }
+            .steps, .features-grid, .includes-grid, .ticks, .mp-specs, .regions { grid-template-columns: 1fr; }
             .step { padding: 1.25rem; display: grid; grid-template-columns: 40px 1fr; column-gap: 1rem; }
             .step::before { margin: 0; grid-row: span 2; }
             .service-card, .includes, .mp-shell { padding: 1.35rem; }
@@ -474,6 +500,7 @@
             <li><a href="#como-funciona">Cómo funciona</a></li>
             <li><a href="#servicios">Servicios</a></li>
             <li><a href="#proyecto-multicamara">Proyectos</a></li>
+            <li><a href="#cobertura">Cobertura</a></li>
             <li><a href="#preguntas">Preguntas</a></li>
             <li class="nav-mobile-only"><a href="#seccion-formulario" class="btn btn-primary">Cotizar gratis</a></li>
             <li class="nav-mobile-only"><a href="https://wa.me/56957817711?text=Hola%2C%20quiero%20cotizar%20la%20instalaci%C3%B3n%20de%20c%C3%A1maras%20solares" target="_blank" rel="noopener" class="btn btn-wa"><svg class="ico-wa" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a></li>
@@ -663,7 +690,24 @@
     </div>
 </section>
 
-<section id="seccion-formulario" class="section">
+<section id="cobertura" class="section">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Zona de instalación</span>
+            <h2 class="section-title">¿Instalan en mi comuna?</h2>
+            <p class="section-sub">Instalamos en todas las comunas de estas cuatro regiones. Vamos directamente a tu propiedad.</p>
+        </div>
+        <div class="regions">
+            <div class="region card"><h3>Región Metropolitana</h3><p>Santiago, Colina, Lampa, Lo Barnechea, Pirque, Buin, Paine, Talagante, Peñaflor, Calera de Tango, Melipilla, Curacaví y el resto de la región.</p></div>
+            <div class="region card"><h3>Región de Valparaíso</h3><p>San Felipe, Los Andes, Casablanca, Quillota, Limache, Viña del Mar, Valparaíso, San Antonio, La Ligua y el resto de la región.</p></div>
+            <div class="region card"><h3>Región de O'Higgins</h3><p>Rancagua, Machalí, Rengo, Requínoa, San Fernando, Santa Cruz, Chimbarongo, Pichilemu y el resto de la región.</p></div>
+            <div class="region card"><h3>Región del Maule</h3><p>Talca, Curicó, Linares, Molina, San Clemente, San Javier, Constitución, Cauquenes y el resto de la región.</p></div>
+        </div>
+        <p class="regions-note">No realizamos instalaciones fuera de estas cuatro regiones.</p>
+    </div>
+</section>
+
+<section id="seccion-formulario" class="section section-alt">
     <div class="form-grid">
         <div class="form-left">
             <span class="eyebrow">Cotización</span>
@@ -777,7 +821,7 @@
     </div>
 </section>
 
-<section id="preguntas" class="section section-alt">
+<section id="preguntas" class="section">
     <div class="container">
         <div class="section-head">
             <span class="eyebrow">Preguntas frecuentes</span>
@@ -812,7 +856,7 @@
     </div>
 </section>
 
-<section id="contacto" class="section">
+<section id="contacto" class="section section-alt">
     <div class="container">
         <div class="final-cta card">
             <h2>Cotiza la instalación de tus cámaras hoy</h2>
