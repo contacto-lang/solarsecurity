@@ -185,15 +185,13 @@
         }
         .logo { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--blue-deep); letter-spacing: -0.01em; }
         .logo-suffix { color: var(--amber); }
-        .sun { width: 30px; height: 30px; flex-shrink: 0; }
+        .sun { width: 30px; height: 30px; flex-shrink: 0; animation: sun-spin 20s linear infinite; }
+        @keyframes sun-spin { to { transform: rotate(360deg); } }
         .nav-links { display: flex; list-style: none; gap: 1.6rem; }
         .nav-links a { color: var(--ink-soft); text-decoration: none; font-weight: 500; font-size: 0.92rem; transition: color 0.2s; }
         .nav-links a:hover, .nav-links a.active { color: var(--blue-deep); }
         .nav-cta { display: flex; gap: 0.6rem; align-items: center; }
         .nav-cta .btn { padding: 0.6rem 1.15rem; font-size: 0.86rem; font-weight: 600; }
-        .nav-btn-wa { color: var(--wa); background: rgba(37,211,102,0.1); border: 1.5px solid rgba(37,211,102,0.4) !important; }
-        .nav-btn-wa:hover { background: rgba(37,211,102,0.18); }
-        .nav-btn-wa .ico-wa { width: 15px; height: 15px; }
         .menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 10px; }
         .menu-toggle span { width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
         .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -311,8 +309,6 @@
         .direct-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
         .pill { display: inline-flex; align-items: center; gap: 0.55rem; text-decoration: none; font-size: 0.88rem; font-weight: 600; padding: 0.65rem 1.1rem; border-radius: 100px; color: var(--blue-deep); background: rgba(45,91,255,0.07); border: 1px solid rgba(45,91,255,0.16); transition: background-color 0.2s; }
         .pill:hover { background: rgba(45,91,255,0.13); }
-        .pill.pill-wa { color: var(--wa); background: rgba(37,211,102,0.1); border-color: rgba(37,211,102,0.35); }
-        .pill.pill-wa:hover { background: rgba(37,211,102,0.18); }
 
         .form-card { padding: 2.4rem; }
         .form-card h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.3rem; }
@@ -365,7 +361,7 @@
         .final-cta small a { color: #fff; }
 
         /* FOOTER */
-        footer { background: var(--ink); color: rgba(255,255,255,0.8); padding: 3rem 1.5rem 6rem; text-align: center; }
+        footer { background: var(--ink); color: rgba(255,255,255,0.8); padding: 3rem 1.5rem 2rem; text-align: center; }
         .footer-brand { display: inline-flex; align-items: center; gap: 0.6rem; font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: #fff; }
         .footer-tagline { font-size: 0.86rem; opacity: 0.65; margin-top: 0.6rem; }
         .footer-links { display: flex; gap: 1.25rem; flex-wrap: wrap; justify-content: center; margin: 1.2rem 0 1.5rem; }
@@ -374,18 +370,6 @@
         .footer-links .ico-wa { color: var(--wa-bg); width: 16px; height: 16px; }
         .footer-links .ico { width: 16px; height: 16px; }
         footer .copy { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.3rem; font-size: 0.82rem; opacity: 0.55; }
-
-        /* WhatsApp flotante */
-        .wa-float {
-            position: fixed; right: 18px; bottom: 18px; z-index: 900;
-            display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.2rem 0.85rem 1rem;
-            background: var(--wa-bg); color: #fff; text-decoration: none; font-weight: 700; font-size: 0.92rem;
-            border-radius: 100px; box-shadow: 0 10px 28px rgba(18,140,74,0.4);
-            transition: transform 0.2s, opacity 0.25s;
-        }
-        .wa-float:hover { transform: translateY(-2px); }
-        .wa-float .ico-wa { width: 22px; height: 22px; }
-        .wa-float.hide { opacity: 0; pointer-events: none; transform: translateY(12px); }
 
         /* Toast */
         .toast { position: fixed; top: 96px; left: 50%; transform: translate(-50%, -12px); z-index: 3000; max-width: 92%; padding: 0.85rem 1.4rem; background: #fff; border: 1px solid rgba(52,168,83,0.35); border-radius: 100px; box-shadow: 0 16px 40px rgba(20,40,90,0.2); color: #2A7A42; font-weight: 600; font-size: 0.9rem; text-align: center; opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.3s; }
@@ -454,8 +438,6 @@
             .fs-row { grid-template-columns: 1fr; gap: 0; }
             .final-cta { padding: 2.25rem 1.35rem; }
             .final-cta .btn { width: 100%; }
-            .wa-float { right: 14px; bottom: 14px; padding: 0.9rem; }
-            .wa-float span { display: none; }
             .toast { top: 84px; font-size: 0.84rem; }
         }
     </style>
@@ -503,12 +485,8 @@
             <li><a href="#cobertura">Cobertura</a></li>
             <li><a href="#preguntas">Preguntas</a></li>
             <li class="nav-mobile-only"><a href="#seccion-formulario" class="btn btn-primary">Cotizar gratis</a></li>
-            <li class="nav-mobile-only"><a href="https://wa.me/56957817711?text=Hola%2C%20quiero%20cotizar%20la%20instalaci%C3%B3n%20de%20c%C3%A1maras%20solares" target="_blank" rel="noopener" class="btn btn-wa"><svg class="ico-wa" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a></li>
         </ul>
         <div class="nav-cta">
-            <a href="https://wa.me/56957817711?text=Hola%2C%20quiero%20cotizar%20la%20instalaci%C3%B3n%20de%20c%C3%A1maras%20solares" target="_blank" rel="noopener" class="btn nav-btn-wa">
-                <svg class="ico-wa" aria-hidden="true"><use href="#i-wa"/></svg>+56 9 5781 7711
-            </a>
             <a href="#seccion-formulario" class="btn btn-primary">Cotizar gratis</a>
         </div>
     </nav>
@@ -524,13 +502,10 @@
             <p class="hero-sub">Nos encargamos de todo: cámara, poste galvanizado con base de hormigón, instalación y configuración. Sin cables ni electricidad, con 4G donde no llega el WiFi.</p>
             <div class="hero-actions">
                 <a href="#seccion-formulario" class="btn btn-primary">Cotizar mi instalación</a>
-                <a href="https://wa.me/56957817711?text=Hola%2C%20quiero%20cotizar%20la%20instalaci%C3%B3n%20de%20c%C3%A1maras%20solares" target="_blank" rel="noopener" class="btn btn-wa">
-                    <svg class="ico-wa" aria-hidden="true"><use href="#i-wa"/></svg>Cotizar por WhatsApp
-                </a>
             </div>
             <ul class="hero-checks">
                 <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Sin compromiso</li>
-                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Poste incluido</li>
+                <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Instalación profesional</li>
                 <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Soporte el primer mes</li>
             </ul>
         </div>
@@ -719,9 +694,8 @@
                 <li><span class="perk-icon"><svg class="ico" aria-hidden="true"><use href="#i-sunline"/></svg></span><span><strong>100% solar, 4G disponible</strong><small>Funciona sin luz ni WiFi</small></span></li>
             </ul>
             <div class="direct">
-                <p>¿Prefieres hablar directo?</p>
+                <p>¿Prefieres escribirnos?</p>
                 <div class="direct-links">
-                    <a href="https://wa.me/56957817711?text=Hola%2C%20quiero%20cotizar%20la%20instalaci%C3%B3n%20de%20c%C3%A1maras%20solares" target="_blank" rel="noopener" class="pill pill-wa"><svg class="ico-wa" aria-hidden="true"><use href="#i-wa"/></svg>+56 9 5781 7711</a>
                     <a href="mailto:contacto@solarsecurity.cl" class="pill"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>contacto@solarsecurity.cl</a>
                 </div>
             </div>
@@ -882,9 +856,6 @@
     <p class="copy">&copy; <span id="year">2026</span> SolarSecurity.cl · Todos los derechos reservados</p>
 </footer>
 
-<a href="https://wa.me/56957817711?text=Hola%2C%20quiero%20cotizar%20la%20instalaci%C3%B3n%20de%20c%C3%A1maras%20solares" target="_blank" rel="noopener" class="wa-float" id="waFloat" aria-label="Cotizar por WhatsApp">
-    <svg class="ico-wa" aria-hidden="true"><use href="#i-wa"/></svg><span>Cotizar por WhatsApp</span>
-</a>
 
 <script>
 (function () {
@@ -985,7 +956,7 @@
         if (history.replaceState) history.replaceState(null, '', location.pathname + '#seccion-formulario');
     }
 
-    /* Enlace activo del menú y botón flotante, sin escuchar scroll */
+    /* Enlace activo del menú, sin escuchar scroll */
     if ('IntersectionObserver' in window) {
         var navMap = {};
         links.querySelectorAll('a[href^="#"]').forEach(function (a) { navMap[a.getAttribute('href').slice(1)] = a; });
@@ -996,12 +967,6 @@
             });
         }, { rootMargin: '-45% 0px -50% 0px' });
         document.querySelectorAll('main section[id]').forEach(function (s) { sectionObs.observe(s); });
-
-        var waFloat = $('waFloat');
-        var formObs = new IntersectionObserver(function (entries) {
-            waFloat.classList.toggle('hide', entries[0].isIntersecting);
-        }, { threshold: 0.15 });
-        formObs.observe($('seccion-formulario'));
     }
 
     /* Carrusel: autoplay solo cuando está visible */
