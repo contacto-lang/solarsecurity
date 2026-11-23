@@ -440,6 +440,87 @@
             .final-cta .btn { width: 100%; }
             .toast { top: 84px; font-size: 0.84rem; }
         }
+
+        /* ILUSTRACIONES (SVG planos, decorativos) */
+        .ill svg, svg.ill { display: block; width: 100%; height: auto; overflow: visible; }
+        @keyframes ill-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+        @keyframes ill-float-sm { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+        @keyframes ill-float-lg { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        @keyframes ill-pulse { 0%, 100% { opacity: 0.35; } 50% { opacity: 0.9; } }
+        @keyframes ill-drift { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(8px); } }
+        .float { animation: ill-float 7s ease-in-out infinite; }
+        .float-sm { animation: ill-float-sm 6s ease-in-out infinite; }
+        .float-lg { animation: ill-float-lg 8s ease-in-out infinite; }
+        .pulse { animation: ill-pulse 4s ease-in-out infinite; }
+        .pulse.d2 { animation-delay: 0.6s; }
+        .pulse.d3 { animation-delay: 1.2s; }
+
+        /* Aparición al hacer scroll (solo si JS está activo) */
+        .anim .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .anim .reveal.is-in { opacity: 1; transform: none; }
+        .anim .reveal:nth-child(2) { transition-delay: 0.1s; }
+        .anim .reveal:nth-child(3) { transition-delay: 0.2s; }
+        .anim .reveal:nth-child(4) { transition-delay: 0.3s; }
+
+        /* Héroe */
+        .hero-art { display: none; position: absolute; right: 0; top: 50%; width: 300px; margin-top: -150px; pointer-events: none; }
+        .hero-art .ha-phone { animation-delay: -2.5s; }
+        @media (min-width: 1100px) { .hero-art { display: block; } }
+
+        /* Banda entre secciones */
+        .band { height: 96px; overflow: hidden; background: var(--bg); margin-bottom: -40px; position: relative; }
+        .band svg { display: block; width: 100%; height: 100%; }
+        .band .band-cloud { animation: ill-drift 8s ease-in-out infinite; }
+        .band .band-cloud.c2 { animation-delay: -4s; }
+
+        /* Pasos */
+        .step-art { position: absolute; top: 1.25rem; right: 1.25rem; width: 64px; transition: transform 0.4s ease; }
+        .step-art svg { width: 100%; height: auto; display: block; }
+        .step:nth-child(1) .step-art svg { animation-delay: 0s; }
+        .step:nth-child(2) .step-art svg { animation-delay: -1.7s; }
+        .step:nth-child(3) .step-art svg { animation-delay: -3.4s; }
+        .step:nth-child(4) .step-art svg { animation-delay: -5.1s; }
+        .step:hover .step-art { transform: translateY(-3px); }
+
+        /* Ventajas: mini ilustraciones */
+        .feature-icon { width: 56px; height: 56px; border-radius: 14px; background: rgba(45,91,255,0.07); border: 1px solid rgba(45,91,255,0.10); }
+        .feature-icon svg { width: 42px; height: 42px; display: block; transition: transform 0.4s ease; }
+        .feature:hover .feature-icon svg { transform: translateY(-3px); }
+
+        /* Cobertura: mapa */
+        .coverage { display: grid; grid-template-columns: 220px 1fr; gap: 2.5rem; align-items: center; }
+        .coverage .regions { grid-template-columns: repeat(2, 1fr); }
+        .coverage-map { width: 100%; max-width: 220px; margin: 0 auto; }
+        .coverage-map svg { width: 100%; height: auto; display: block; }
+        .coverage-map .pin { transition: opacity 0.6s ease, transform 0.6s ease; }
+        .anim .coverage-map .pin { opacity: 0; transform: translateY(-8px); }
+        .anim .coverage-map.is-in .pin { opacity: 1; transform: none; }
+        .coverage-map .pin.p2 { transition-delay: 0.25s; }
+        .coverage-map .pin.p3 { transition-delay: 0.5s; }
+        .coverage-map .pin.p4 { transition-delay: 0.75s; }
+
+        /* Formulario */
+        .form-art { width: 100%; max-width: 340px; margin: 0 0 1.75rem; }
+        .form-art .fa-doc { animation-delay: -3s; }
+
+        @media (max-width: 900px) {
+            .coverage { grid-template-columns: 1fr; gap: 1.75rem; }
+            .coverage-map { max-width: 150px; }
+            .form-art { display: none; }
+        }
+        @media (max-width: 640px) {
+            .band { height: 58px; margin-bottom: -24px; }
+            .step { padding-right: 4rem; }
+            .step-art { width: 40px; top: 1.1rem; right: 1rem; }
+            .coverage-map { display: none; }
+            .feature-icon { width: 50px; height: 50px; }
+            .feature-icon svg { width: 36px; height: 36px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .float, .float-sm, .float-lg, .pulse, .band .band-cloud { animation: none !important; }
+            .anim .reveal, .anim .coverage-map .pin { opacity: 1 !important; transform: none !important; }
+            .step:hover .step-art, .feature:hover .feature-icon svg { transform: none; }
+        }
     </style>
 </head>
 <body>
@@ -509,6 +590,53 @@
                 <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Soporte el primer mes</li>
             </ul>
         </div>
+        <div class="hero-art" aria-hidden="true">
+            <svg class="ill" viewBox="0 0 300 300" focusable="false">
+                <defs><clipPath id="haClip"><circle cx="150" cy="150" r="132"/></clipPath></defs>
+                <circle cx="150" cy="150" r="132" fill="#FFFFFF" opacity=".82"/>
+                <g clip-path="url(#haClip)">
+                    <path d="M10 214 C 70 194 120 200 160 208 S 240 196 300 210 V300 H10Z" fill="#2D5BFF" opacity=".08"/>
+                    <path d="M10 236 C 90 222 170 230 300 222 V300 H10Z" fill="#2D5BFF" opacity=".07"/>
+                    <g stroke="#1638B2" stroke-opacity=".18" stroke-width="1.5" stroke-linecap="round">
+                        <line x1="196" y1="232" x2="222" y2="214"/><line x1="214" y1="234" x2="240" y2="216"/><line x1="232" y1="236" x2="258" y2="218"/><line x1="250" y1="238" x2="276" y2="220"/>
+                    </g>
+                </g>
+                <circle cx="150" cy="150" r="132" fill="none" stroke="#2D5BFF" stroke-opacity=".14" stroke-width="1.5"/>
+                <g>
+                    <circle cx="222" cy="74" r="22" fill="#FFB020" opacity=".14"/>
+                    <circle cx="222" cy="74" r="12" fill="#FFB020" opacity=".9"/>
+                </g>
+                <g class="float">
+                    <rect x="120" y="214" width="40" height="9" rx="2.5" fill="#1638B2" fill-opacity=".14" stroke="#1638B2" stroke-width="1.75"/>
+                    <rect x="136" y="112" width="8" height="103" rx="2" fill="#EDF1F8" stroke="#1638B2" stroke-width="1.75"/>
+                    <line x1="140" y1="112" x2="140" y2="104" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round"/>
+                    <polygon points="98,96 172,82 182,106 108,121" fill="#1638B2" stroke="#1638B2" stroke-width="1.75" stroke-linejoin="round"/>
+                    <g stroke="#FFFFFF" stroke-opacity=".45" stroke-width="1.25">
+                        <line x1="135" y1="89" x2="145" y2="113.5"/><line x1="103" y1="108.5" x2="177" y2="94"/>
+                        <line x1="116.5" y1="92.5" x2="126.5" y2="117"/><line x1="153.5" y1="85.5" x2="163.5" y2="110"/>
+                    </g>
+                    <line x1="136" y1="150" x2="124" y2="150" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round"/>
+                    <rect x="88" y="140" width="38" height="20" rx="7" fill="#FFFFFF" stroke="#1638B2" stroke-width="1.75"/>
+                    <path d="M86 140 h40" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round"/>
+                    <circle cx="96" cy="150" r="5" fill="#2D5BFF"/>
+                    <circle cx="96" cy="150" r="1.8" fill="#FFFFFF"/>
+                    <circle cx="117" cy="146" r="2" fill="#FFB020"/>
+                    <rect x="144" y="164" width="14" height="20" rx="3" fill="#2D5BFF" stroke="#1638B2" stroke-width="1.5"/>
+                    <g fill="none" stroke="#2D5BFF" stroke-width="1.75" stroke-linecap="round">
+                        <path class="pulse" d="M164 160 a10 10 0 0 1 0 14"/>
+                        <path class="pulse d2" d="M170 154 a18 18 0 0 1 0 26"/>
+                        <path class="pulse d3" d="M176 148 a26 26 0 0 1 0 38"/>
+                    </g>
+                </g>
+                <g class="float-lg ha-phone">
+                    <rect x="200" y="132" width="46" height="78" rx="9" fill="#FFFFFF" stroke="#1638B2" stroke-width="1.75"/>
+                    <rect x="206" y="142" width="34" height="50" rx="4" fill="#2D5BFF" opacity=".12"/>
+                    <path d="M213 176 L223 166 L233 176 V186 H213Z" fill="#2D5BFF" fill-opacity=".35" stroke="#1638B2" stroke-width="1.5" stroke-linejoin="round"/>
+                    <circle cx="234" cy="149" r="3" fill="#FFB020"/>
+                    <line x1="218" y1="200" x2="228" y2="200" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round"/>
+                </g>
+            </svg>
+        </div>
     </div>
     <div class="hero-strip">
         <div><strong>100% solar</strong><span>Sin cables ni cuenta de luz</span></div>
@@ -518,6 +646,30 @@
     </div>
 </section>
 
+<div class="band" aria-hidden="true">
+    <svg viewBox="0 0 1440 110" preserveAspectRatio="xMidYMax slice" focusable="false">
+        <circle cx="1372" cy="22" r="20" fill="#FFB020" opacity=".12"/>
+        <circle cx="1372" cy="22" r="10" fill="#FFB020" opacity=".55"/>
+        <g class="band-cloud"><path d="M520 34 h44 a10 10 0 0 0 -10 -14 a14 14 0 0 0 -26 2 a9 9 0 0 0 -8 12Z" fill="#FFFFFF" stroke="#2D5BFF" stroke-opacity=".14" stroke-width="1.5"/></g>
+        <g class="band-cloud c2"><path d="M980 26 h36 a8 8 0 0 0 -8 -11 a11 11 0 0 0 -21 2 a7 7 0 0 0 -7 9Z" fill="#FFFFFF" stroke="#2D5BFF" stroke-opacity=".12" stroke-width="1.5"/></g>
+        <path d="M0 82 L120 50 L210 72 L330 32 L450 66 L560 42 L690 74 L820 28 L940 64 L1060 44 L1180 72 L1300 38 L1440 68 V110 H0Z" fill="#2D5BFF" opacity=".06"/>
+        <path d="M0 82 L120 50 L210 72 L330 32 L450 66 L560 42 L690 74 L820 28 L940 64 L1060 44 L1180 72 L1300 38 L1440 68" fill="none" stroke="#2D5BFF" stroke-opacity=".16" stroke-width="1.5" stroke-linejoin="round"/>
+        <g fill="#FFFFFF" opacity=".95">
+            <path d="M330 32 L316 41 L324 40 L330 44 L337 39 L344 40Z"/>
+            <path d="M820 28 L806 37 L814 36 L820 40 L827 35 L834 36Z"/>
+            <path d="M1300 38 L1288 46 L1295 45 L1300 48 L1306 44 L1312 45Z"/>
+        </g>
+        <path d="M0 98 C 240 80 420 94 640 88 S 1040 76 1440 94 V110 H0Z" fill="#2D5BFF" opacity=".08"/>
+        <g stroke="#1638B2" stroke-opacity=".18" stroke-width="1.5" stroke-linecap="round">
+            <line x1="1010" y1="104" x2="1036" y2="88"/><line x1="1032" y1="104" x2="1058" y2="88"/><line x1="1054" y1="104" x2="1080" y2="88"/><line x1="1076" y1="104" x2="1102" y2="88"/><line x1="1098" y1="104" x2="1124" y2="88"/>
+        </g>
+        <g stroke="#1638B2" stroke-opacity=".38" stroke-width="1.5" stroke-linecap="round" fill="none">
+            <line x1="300" y1="92" x2="300" y2="64"/><path d="M290 62 L310 58 L312 64 L292 68Z" fill="#1638B2" fill-opacity=".3"/><path d="M300 74 h-8"/><rect x="284" y="71" width="9" height="6" rx="2" fill="#FFFFFF"/>
+            <line x1="1220" y1="96" x2="1220" y2="68"/><path d="M1210 66 L1230 62 L1232 68 L1212 72Z" fill="#1638B2" fill-opacity=".3"/><path d="M1220 78 h-8"/><rect x="1204" y="75" width="9" height="6" rx="2" fill="#FFFFFF"/>
+        </g>
+    </svg>
+</div>
+
 <section id="como-funciona" class="section">
     <div class="container">
         <div class="section-head">
@@ -526,10 +678,10 @@
             <p class="section-sub">Sin visitas a oficinas ni trámites: lo coordinamos todo a distancia y vamos directo a tu propiedad.</p>
         </div>
         <ol class="steps">
-            <li class="step card"><h3>Cuéntanos de tu propiedad</h3><p>Por WhatsApp o el formulario: comuna, tipo de terreno y qué quieres vigilar.</p></li>
-            <li class="step card"><h3>Recibe tu cotización</h3><p>En menos de 24 horas te enviamos una propuesta con equipos, ubicación de cámaras y precio final.</p></li>
-            <li class="step card"><h3>Instalamos</h3><p>Llevamos cámara y poste, verificamos la señal, montamos y orientamos el panel solar.</p></li>
-            <li class="step card"><h3>Listo y con soporte</h3><p>Te dejamos la app configurada con alertas, te enseñamos a usarla y te acompañamos el primer mes.</p></li>
+            <li class="step card reveal"><span class="step-art" aria-hidden="true"><svg class="float" viewBox="0 0 64 52" focusable="false"><path d="M6 30 L21 18 L36 30 V48 H6Z" fill="#2D5BFF" fill-opacity=".12" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><rect x="17" y="36" width="8" height="12" rx="1.5" fill="#FFFFFF" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 4 h24 a5 5 0 0 1 5 5 v10 a5 5 0 0 1 -5 5 h-14 l-6 5 v-5 h-4 a5 5 0 0 1 -5 -5 v-10 a5 5 0 0 1 5 -5Z" fill="#2D5BFF" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><g fill="#FFFFFF"><circle cx="38" cy="14" r="1.8"/><circle cx="44" cy="14" r="1.8"/><circle cx="50" cy="14" r="1.8"/></g></svg></span><h3>Cuéntanos de tu propiedad</h3><p>Por WhatsApp o el formulario: comuna, tipo de terreno y qué quieres vigilar.</p></li>
+            <li class="step card reveal"><span class="step-art" aria-hidden="true"><svg class="float" viewBox="0 0 64 52" focusable="false"><rect x="12" y="3" width="32" height="44" rx="5" fill="#FFFFFF" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><g stroke="#2D5BFF" stroke-opacity=".5" stroke-width="1.75" stroke-linecap="round"><line x1="19" y1="13" x2="37" y2="13"/><line x1="19" y1="20" x2="33" y2="20"/><line x1="19" y1="27" x2="35" y2="27"/></g><rect x="19" y="33" width="12" height="6" rx="2" fill="#2D5BFF" fill-opacity=".18"/><circle cx="47" cy="38" r="10" fill="#FFB020"/><polyline points="42.5,38 46,41.5 51.5,35" fill="none" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>Recibe tu cotización</h3><p>En menos de 24 horas te enviamos una propuesta con equipos, ubicación de cámaras y precio final.</p></li>
+            <li class="step card reveal"><span class="step-art" aria-hidden="true"><svg class="float" viewBox="0 0 64 52" focusable="false"><path d="M18 49 h26" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><rect x="28" y="16" width="6" height="33" rx="1.5" fill="#EDF1F8" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><polygon points="16,10 44,5 47,14 19,19" fill="#1638B2" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 27 h-6" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><rect x="10" y="22" width="14" height="9" rx="3" fill="#FFFFFF" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="26.5" r="2" fill="#2D5BFF"/><g fill="none" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M46 44 L56 34"/><path d="M54.5 28.5 a4.5 4.5 0 1 0 6 6 l-2.5 -0.5 -0.5 -2.5 Z" fill="#FFB020" fill-opacity=".85"/></g></svg></span><h3>Instalamos</h3><p>Llevamos cámara y poste, verificamos la señal, montamos y orientamos el panel solar.</p></li>
+            <li class="step card reveal"><span class="step-art" aria-hidden="true"><svg class="float" viewBox="0 0 64 52" focusable="false"><rect x="14" y="4" width="26" height="44" rx="6" fill="#FFFFFF" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><rect x="18" y="11" width="18" height="27" rx="3" fill="#2D5BFF" opacity=".14"/><path d="M21 31 L27 25 L33 31 V36 H21Z" fill="#2D5BFF" fill-opacity=".4"/><line x1="24" y1="43" x2="30" y2="43" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><circle cx="48" cy="14" r="11" fill="#FFB020"/><path d="M43.5 17 h9 c-1 -1 -1.5 -2 -1.5 -4 a3 3 0 0 0 -6 0 c0 2 -0.5 3 -1.5 4Z M47 19 h2" fill="none" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>Listo y con soporte</h3><p>Te dejamos la app configurada con alertas, te enseñamos a usarla y te acompañamos el primer mes.</p></li>
         </ol>
         <div class="center-cta">
             <a href="#seccion-formulario" class="btn btn-primary">Pedir mi cotización</a>
@@ -655,12 +807,12 @@
             <h2 class="section-title">¿Por qué una cámara solar?</h2>
         </div>
         <div class="features-grid">
-            <div class="feature card"><div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-sunline"/></svg></div><div><h3>Energía solar</h3><p>Funciona sin cables eléctricos ni cuenta de luz, incluso durante cortes.</p></div></div>
-            <div class="feature card"><div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg></div><div><h3>Monitoreo remoto</h3><p>Mira tu propiedad en vivo desde el celular, estés donde estés.</p></div></div>
-            <div class="feature card"><div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-signal"/></svg></div><div><h3>4G sin WiFi</h3><p>Transmite por red móvil en terrenos sin internet fijo.</p></div></div>
-            <div class="feature card"><div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-moon"/></svg></div><div><h3>Visión nocturna</h3><p>Vigilancia las 24 horas con infrarrojo.</p></div></div>
-            <div class="feature card"><div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-bell"/></svg></div><div><h3>Alertas inteligentes</h3><p>Avisos al instante cuando detecta personas o movimiento.</p></div></div>
-            <div class="feature card"><div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg></div><div><h3>Resistente al clima</h3><p>Soporta lluvia, viento, polvo y sol intenso.</p></div></div>
+            <div class="feature card reveal"><div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><circle cx="34" cy="12" r="6" fill="#FFB020"/><circle cx="34" cy="12" r="10" fill="#FFB020" opacity=".2"/><polygon points="6,24 32,20 38,36 12,40" fill="#1638B2" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><g stroke="#FFFFFF" stroke-opacity=".5" stroke-width="1.2"><line x1="19" y1="22" x2="25" y2="38"/><line x1="9" y1="32" x2="35" y2="28"/></g><path d="M22 39 v5 M16 44 h12" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h3>Energía solar</h3><p>Funciona sin cables eléctricos ni cuenta de luz, incluso durante cortes.</p></div></div>
+            <div class="feature card reveal"><div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><rect x="13" y="4" width="22" height="40" rx="5" fill="#FFFFFF" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><rect x="17" y="10" width="14" height="24" rx="2.5" fill="#2D5BFF" opacity=".14"/><path d="M19 28 L24 23 L29 28 V32 H19Z" fill="#2D5BFF" fill-opacity=".45"/><circle cx="28" cy="14" r="2" fill="#FFB020"/><line x1="21" y1="39" x2="27" y2="39" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h3>Monitoreo remoto</h3><p>Mira tu propiedad en vivo desde el celular, estés donde estés.</p></div></div>
+            <div class="feature card reveal"><div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><path d="M24 22 L17 44 M24 22 L31 44 M19.5 36 h9" fill="none" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="20" r="3.5" fill="#FFB020"/><g fill="none" stroke="#2D5BFF" stroke-width="1.75" stroke-linecap="round"><path d="M17 13 a10 10 0 0 0 0 14"/><path d="M31 13 a10 10 0 0 1 0 14"/><path d="M11 8 a17 17 0 0 0 0 24"/><path d="M37 8 a17 17 0 0 1 0 24"/></g></svg></div><div><h3>4G sin WiFi</h3><p>Transmite por red móvil en terrenos sin internet fijo.</p></div></div>
+            <div class="feature card reveal"><div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><path d="M18 22 L44 12 V36Z" fill="#2D5BFF" opacity=".12"/><rect x="5" y="16" width="20" height="13" rx="4" fill="#FFFFFF" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="22.5" r="3.5" fill="#2D5BFF"/><circle cx="9.5" cy="20" r="1.5" fill="#FFB020"/><path d="M13 29 v7 M9 36 h8" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><g stroke="#2D5BFF" stroke-opacity=".45" stroke-width="1.5" stroke-linecap="round"><line x1="30" y1="19" x2="38" y2="16"/><line x1="30" y1="24" x2="39" y2="24"/><line x1="30" y1="29" x2="38" y2="32"/></g></svg></div><div><h3>Visión nocturna</h3><p>Vigilancia las 24 horas con infrarrojo.</p></div></div>
+            <div class="feature card reveal"><div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><path d="M12 33 c2 -2 3 -5 3 -11 a9 9 0 0 1 18 0 c0 6 1 9 3 11Z" fill="#2D5BFF" fill-opacity=".14" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 38 a3 3 0 0 0 6 0" fill="none" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><circle cx="34" cy="12" r="5" fill="#FFB020"/></svg></div><div><h3>Alertas inteligentes</h3><p>Avisos al instante cuando detecta personas o movimiento.</p></div></div>
+            <div class="feature card reveal"><div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><path d="M24 5 L39 11 V22 c0 10 -6.5 17 -15 20 c-8.5 -3 -15 -10 -15 -20 V11Z" fill="#2D5BFF" fill-opacity=".12" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><circle cx="30" cy="17" r="4" fill="#FFB020"/><path d="M15 31 h17 a5 5 0 0 0 -3 -9 a6.5 6.5 0 0 0 -12.5 1.5 a4 4 0 0 0 -1.5 7.5Z" fill="#FFFFFF" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h3>Resistente al clima</h3><p>Soporta lluvia, viento, polvo y sol intenso.</p></div></div>
         </div>
     </div>
 </section>
@@ -672,11 +824,31 @@
             <h2 class="section-title">¿Instalan en mi comuna?</h2>
             <p class="section-sub">Instalamos en todas las comunas de estas cuatro regiones. Vamos directamente a tu propiedad.</p>
         </div>
+        <div class="coverage">
+            <div class="coverage-map reveal" aria-hidden="true">
+                <svg viewBox="0 0 200 330" focusable="false">
+                    <g fill="none" stroke="#2D5BFF" stroke-opacity=".22" stroke-width="1.5" stroke-linecap="round">
+                        <path d="M14 70 q8 -5 16 0 t16 0"/><path d="M10 170 q8 -5 16 0 t16 0"/><path d="M22 260 q8 -5 16 0 t16 0"/>
+                    </g>
+                    <g fill="#2D5BFF" fill-opacity=".07" stroke="#2D5BFF" stroke-opacity=".22" stroke-width="1.5" stroke-linejoin="round">
+                        <path d="M160 52 L174 30 L188 52Z"/><path d="M164 112 L180 86 L196 112Z"/><path d="M168 182 L182 160 L196 182Z"/><path d="M170 256 L184 232 L198 256Z"/>
+                    </g>
+                    <g stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round">
+                        <path d="M60 12 L148 8 C152 30 150 50 156 72 L150 96 L108 100 L96 128 L70 146 C60 120 52 92 56 64 C56 44 60 28 60 12Z" fill="#2D5BFF" fill-opacity=".14"/>
+                        <path d="M108 100 L150 96 L160 122 L158 158 L118 168 L92 152 L96 128Z" fill="#2D5BFF" fill-opacity=".28"/>
+                        <path d="M70 146 L96 128 L92 152 L118 168 L158 158 L164 192 L160 222 L80 228 C72 200 68 172 70 146Z" fill="#2D5BFF" fill-opacity=".14"/>
+                        <path d="M80 228 L160 222 L166 258 L162 300 L94 314 C88 286 82 258 80 228Z" fill="#2D5BFF" fill-opacity=".22"/>
+                    </g>
+                    <path d="M60 12 L148 8 C152 30 150 50 156 72 L150 96 L160 122 L158 158 L164 192 L160 222 L166 258 L162 300 L94 314 C88 286 82 258 80 228 C72 200 68 172 70 146 C60 120 52 92 56 64 C56 44 60 28 60 12Z" fill="none" stroke="#1638B2" stroke-opacity=".35" stroke-width="1.5" stroke-linejoin="round"/>
+                    <g transform="translate(104 60)"><g class="pin p1"><ellipse cx="0" cy="1" rx="6" ry="2" fill="#1638B2" opacity=".15"/><path d="M0 0 c-6 -8 -9 -12 -9 -17 a9 9 0 0 1 18 0 c0 5 -3 9 -9 17Z" fill="#FFB020" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><circle cx="0" cy="-17" r="3.5" fill="#FFFFFF"/></g></g><g transform="translate(128 140)"><g class="pin p2"><ellipse cx="0" cy="1" rx="6" ry="2" fill="#1638B2" opacity=".15"/><path d="M0 0 c-6 -8 -9 -12 -9 -17 a9 9 0 0 1 18 0 c0 5 -3 9 -9 17Z" fill="#FFB020" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><circle cx="0" cy="-17" r="3.5" fill="#FFFFFF"/></g></g><g transform="translate(118 202)"><g class="pin p3"><ellipse cx="0" cy="1" rx="6" ry="2" fill="#1638B2" opacity=".15"/><path d="M0 0 c-6 -8 -9 -12 -9 -17 a9 9 0 0 1 18 0 c0 5 -3 9 -9 17Z" fill="#FFB020" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><circle cx="0" cy="-17" r="3.5" fill="#FFFFFF"/></g></g><g transform="translate(122 278)"><g class="pin p4"><ellipse cx="0" cy="1" rx="6" ry="2" fill="#1638B2" opacity=".15"/><path d="M0 0 c-6 -8 -9 -12 -9 -17 a9 9 0 0 1 18 0 c0 5 -3 9 -9 17Z" fill="#FFB020" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/><circle cx="0" cy="-17" r="3.5" fill="#FFFFFF"/></g></g>
+                </svg>
+            </div>
         <div class="regions">
             <div class="region card"><h3>Región Metropolitana</h3><p>Santiago, Colina, Lampa, Lo Barnechea, Pirque, Buin, Paine, Talagante, Peñaflor, Calera de Tango, Melipilla, Curacaví y el resto de la región.</p></div>
             <div class="region card"><h3>Región de Valparaíso</h3><p>San Felipe, Los Andes, Casablanca, Quillota, Limache, Viña del Mar, Valparaíso, San Antonio, La Ligua y el resto de la región.</p></div>
             <div class="region card"><h3>Región de O'Higgins</h3><p>Rancagua, Machalí, Rengo, Requínoa, San Fernando, Santa Cruz, Chimbarongo, Pichilemu y el resto de la región.</p></div>
             <div class="region card"><h3>Región del Maule</h3><p>Talca, Curicó, Linares, Molina, San Clemente, San Javier, Constitución, Cauquenes y el resto de la región.</p></div>
+        </div>
         </div>
         <p class="regions-note">No realizamos instalaciones fuera de estas cuatro regiones.</p>
     </div>
@@ -693,6 +865,29 @@
                 <li><span class="perk-icon"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></span><span><strong>Poste galvanizado incluido</strong><small>Con base de hormigón y nivelación</small></span></li>
                 <li><span class="perk-icon"><svg class="ico" aria-hidden="true"><use href="#i-sunline"/></svg></span><span><strong>100% solar, 4G disponible</strong><small>Funciona sin luz ni WiFi</small></span></li>
             </ul>
+            <div class="form-art reveal" aria-hidden="true">
+                <svg class="ill" viewBox="0 0 340 150" focusable="false">
+                    <path d="M10 132 C 90 114 170 120 330 110 V132 H10Z" fill="#2D5BFF" opacity=".07"/>
+                    <path d="M10 132 H330" stroke="#1638B2" stroke-opacity=".25" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="312" cy="24" r="15" fill="#FFB020" opacity=".14"/><circle cx="312" cy="24" r="8" fill="#FFB020" opacity=".85"/>
+                    <rect x="40" y="72" width="90" height="60" rx="3" fill="#FFFFFF" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polygon points="30,76 85,36 140,76" fill="#2D5BFF" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="74" y="100" width="20" height="32" rx="2" fill="#2D5BFF" fill-opacity=".15" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="104" y="88" width="16" height="14" rx="2" fill="#2D5BFF" fill-opacity=".15" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="50" y="88" width="16" height="14" rx="2" fill="#2D5BFF" fill-opacity=".15" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    <g class="float">
+                        <path d="M172 30 L196 40 V58 c0 16 -10 27 -24 32 c-14 -5 -24 -16 -24 -32 V40Z" fill="#2D5BFF" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                        <polyline points="161,60 169,68 183,52" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <g class="float-lg fa-doc">
+                        <rect x="222" y="30" width="62" height="82" rx="8" fill="#FFFFFF" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                        <g stroke="#2D5BFF" stroke-opacity=".5" stroke-width="1.75" stroke-linecap="round"><line x1="234" y1="46" x2="272" y2="46"/><line x1="234" y1="58" x2="264" y2="58"/><line x1="234" y1="70" x2="268" y2="70"/></g>
+                        <rect x="234" y="82" width="22" height="9" rx="2.5" fill="#2D5BFF" fill-opacity=".18"/>
+                        <circle cx="282" cy="104" r="12" fill="#FFB020"/>
+                        <polyline points="276.5,104 280.5,108 287.5,100" fill="none" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                </svg>
+            </div>
             <div class="direct">
                 <p>¿Prefieres escribirnos?</p>
                 <div class="direct-links">
@@ -1004,6 +1199,19 @@
     if ('IntersectionObserver' in window) {
         new IntersectionObserver(function (entries) { visible = entries[0].isIntersecting; play(); }, { threshold: 0.3 }).observe(carousel);
     } else { visible = true; play(); }
+})();
+</script>
+<script>
+(function () {
+    'use strict';
+    var els = document.querySelectorAll('.reveal');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!els.length || reduce || !('IntersectionObserver' in window)) return;
+    document.documentElement.classList.add('anim');
+    var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (el) { io.observe(el); });
 })();
 </script>
 </body>
