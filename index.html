@@ -40,12 +40,13 @@
     <meta name="twitter:description" content="Instalamos cámaras de seguridad solares con poste incluido en parcelas, condominios, viñedos y casas. Cotiza gratis por WhatsApp.">
     <meta name="twitter:image" content="https://i.postimg.cc/05BxXCX4/Gemini-Generated-Image-1owf1r1owf1r1owf(1)(1).png">
 
-    <!-- Imágenes de terceros: sin crossorigin (las <img> no usan CORS, así la conexión precalentada sí se reutiliza) -->
-    <link rel="preconnect" href="https://i.postimg.cc">
-    <link rel="preload" as="image" href="https://i.postimg.cc/L5P5Cpkc/pexels-photo-9891155.jpg" fetchpriority="high">
+    <!-- Foto del héroe alojada en el sitio (WebP en 3 tamaños) -->
+    <link rel="preload" as="image" href="/img/hero-vinedo-1280.webp" imagesrcset="/img/hero-vinedo-768.webp 768w, /img/hero-vinedo-1280.webp 1280w, /img/hero-vinedo-1920.webp 1920w" imagesizes="(max-aspect-ratio: 3/2) 150vh, 100vw" type="image/webp" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fuentes sin bloquear el primer pintado: se aplican al terminar de cargar (display=swap) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
     <script type="application/ld+json">
     {
@@ -168,9 +169,9 @@
         }
         .btn-primary { background: linear-gradient(135deg, var(--blue), var(--blue-deep)); color: #fff; box-shadow: 0 10px 26px rgba(45,91,255,0.32); }
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(45,91,255,0.42); }
-        .btn-wa { background: var(--wa-bg); color: #fff; box-shadow: 0 10px 26px rgba(37,211,102,0.32); }
-        .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(37,211,102,0.42); }
-        .btn-wa .ico-wa { width: 20px; height: 20px; }
+        .btn-wa { background: #fff; color: var(--ink); border: 1.5px solid rgba(11,18,32,0.12); box-shadow: 0 6px 18px rgba(20,40,90,0.08); transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+        .btn-wa:hover { transform: translateY(-2px); border-color: rgba(27,138,75,0.45); box-shadow: 0 10px 24px rgba(20,40,90,0.12); }
+        .btn-wa .ico-wa { width: 20px; height: 20px; color: var(--wa); }
 
         /* HEADER */
         header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0.9rem 1rem; }
@@ -353,24 +354,28 @@
         .faq details p { padding: 0 1.35rem 1.2rem; color: var(--ink-soft); font-size: 0.95rem; }
 
         /* CTA FINAL / CONTACTO */
-        .final-cta { padding: 3rem 2.5rem; text-align: center; background: linear-gradient(135deg, var(--blue-deep), #0E2672); color: #fff; border: none; }
-        .final-cta h2 { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; margin-bottom: 0.6rem; }
-        .final-cta p { color: rgba(255,255,255,0.8); max-width: 560px; margin: 0 auto 1.75rem; }
-        .final-cta .btn-primary { background: #fff; color: var(--blue-deep); box-shadow: none; }
-        .final-cta small { display: block; margin-top: 1.4rem; color: rgba(255,255,255,0.6); font-size: 0.82rem; }
-        .final-cta small a { color: #fff; }
-
+        .final-cta { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 2.5rem; align-items: center; padding: 3rem 3.25rem; text-align: left; }
+        .final-cta h2 { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 0.7rem; }
+        .final-cta p { color: var(--ink-soft); max-width: 520px; margin: 0 0 1.75rem; }
+        .final-cta .center-cta { justify-content: flex-start; }
+        .final-cta small { display: block; margin-top: 1.4rem; color: var(--ink-faint); font-size: 0.84rem; }
+        .final-cta small a { color: var(--blue-deep); font-weight: 600; }
+        #contacto { padding-bottom: 48px; }
+        .final-cta-art { width: 100%; max-width: 340px; justify-self: center; }
+        .final-cta-art svg { display: block; width: 100%; height: auto; overflow: visible; }
         /* FOOTER */
-        footer { background: var(--ink); color: rgba(255,255,255,0.8); padding: 3rem 1.5rem 2rem; text-align: center; }
-        .footer-brand { display: inline-flex; align-items: center; gap: 0.6rem; font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: #fff; }
-        .footer-tagline { font-size: 0.86rem; opacity: 0.65; margin-top: 0.6rem; }
-        .footer-links { display: flex; gap: 1.25rem; flex-wrap: wrap; justify-content: center; margin: 1.2rem 0 1.5rem; }
-        .footer-links a { display: inline-flex; align-items: center; gap: 0.45rem; color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.88rem; }
-        .footer-links a:hover { color: #fff; }
-        .footer-links .ico-wa { color: var(--wa-bg); width: 16px; height: 16px; }
+        footer { background: var(--bg); color: var(--ink-soft); padding: 0 1.5rem 2rem; }
+        .footer-band { height: 72px; margin: 0 -1.5rem 2.25rem; overflow: hidden; }
+        .footer-band svg { display: block; width: 100%; height: 100%; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem 2rem; flex-wrap: wrap; }
+        .footer-brand { display: inline-flex; align-items: center; gap: 0.6rem; font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--blue-deep); }
+        .footer-tagline { font-size: 0.86rem; color: var(--ink-faint); margin-top: 0.45rem; }
+        .footer-links { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+        .footer-links a { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--blue-deep); text-decoration: none; font-size: 0.88rem; font-weight: 600; padding: 0.6rem 1.05rem; border-radius: 100px; background: var(--card); border: 1px solid var(--line); transition: border-color 0.2s, transform 0.2s; }
+        .footer-links a:hover { border-color: rgba(45,91,255,0.35); transform: translateY(-2px); }
+        .footer-links .ico-wa { color: var(--wa); width: 16px; height: 16px; }
         .footer-links .ico { width: 16px; height: 16px; }
-        footer .copy { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.3rem; font-size: 0.82rem; opacity: 0.55; }
-
+        footer .copy { max-width: 1200px; margin: 1.75rem auto 0; border-top: 1px solid var(--line); padding-top: 1.3rem; font-size: 0.82rem; color: var(--ink-faint); }
         /* Toast */
         .toast { position: fixed; top: 96px; left: 50%; transform: translate(-50%, -12px); z-index: 3000; max-width: 92%; padding: 0.85rem 1.4rem; background: #fff; border: 1px solid rgba(52,168,83,0.35); border-radius: 100px; box-shadow: 0 16px 40px rgba(20,40,90,0.2); color: #2A7A42; font-weight: 600; font-size: 0.9rem; text-align: center; opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.3s; }
         .toast.show { opacity: 1; transform: translate(-50%, 0); }
@@ -395,6 +400,8 @@
             :root { --header-h: 76px; }
             header { padding: 0.7rem 0.75rem; }
             nav { border-radius: 22px; padding: 0.5rem 0.5rem 0.5rem 1rem; }
+            /* El desenfoque del menú fijo es costoso al hacer scroll en celulares: fondo sólido */
+            nav { background: rgba(255,255,255,0.96); backdrop-filter: none; -webkit-backdrop-filter: none; }
             .logo { font-size: 1.02rem; }
             .sun { width: 26px; height: 26px; }
             .menu-toggle { display: flex; }
@@ -437,6 +444,8 @@
             .form-card { padding: 1.5rem 1.2rem; }
             .fs-row { grid-template-columns: 1fr; gap: 0; }
             .final-cta { padding: 2.25rem 1.35rem; }
+            .final-cta-art { display: none; }
+            .footer-band { height: 48px; margin-bottom: 1.75rem; }
             .final-cta .btn { width: 100%; }
             .toast { top: 84px; font-size: 0.84rem; }
         }
@@ -458,16 +467,12 @@
         /* Aparición al hacer scroll (solo si JS está activo) */
         .anim .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .anim .reveal.is-in { opacity: 1; transform: none; }
+        /* Animaciones decorativas en pausa mientras no están en pantalla */
+        .anim-off, .anim-off * { animation-play-state: paused !important; }
         .anim .reveal:nth-child(2) { transition-delay: 0.1s; }
         .anim .reveal:nth-child(3) { transition-delay: 0.2s; }
         .anim .reveal:nth-child(4) { transition-delay: 0.3s; }
 
-        /* Héroe */
-        .hero-art { display: none; position: absolute; right: 2%; bottom: 8%; pointer-events: none; }
-        .hero-chip { width: 190px; padding: 14px 16px; border-radius: 18px; background: rgba(255,255,255,0.74); border: 1px solid rgba(255,255,255,0.9); box-shadow: 0 10px 30px rgba(20,40,90,0.12); }
-        @supports (backdrop-filter: blur(1px)) { .hero-chip { background: rgba(255,255,255,0.8); backdrop-filter: blur(10px) saturate(1.2); -webkit-backdrop-filter: blur(10px) saturate(1.2); } }
-        .hero-chip svg { display: block; width: 100%; height: auto; }
-        @media (min-width: 1100px) { .hero-art { display: block; } }
 
         /* Banda entre secciones */
         .band { height: 96px; overflow: hidden; background: var(--bg); margin-bottom: -40px; position: relative; }
@@ -509,6 +514,13 @@
             .coverage { grid-template-columns: 1fr; gap: 1.75rem; }
             .coverage-map { max-width: 150px; }
             .form-art { display: none; }
+            .final-cta { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; }
+            .final-cta-art { max-width: 220px; order: -1; }
+            .final-cta p { margin-left: auto; margin-right: auto; }
+            .final-cta .center-cta { justify-content: center; }
+            .footer-inner { flex-direction: column; text-align: center; }
+            .footer-links { justify-content: center; }
+            footer .copy { text-align: center; }
         }
         @media (max-width: 640px) {
             .band { height: 58px; margin-bottom: -24px; }
@@ -546,6 +558,7 @@
     <symbol id="i-battery" viewBox="0 0 24 24"><rect x="2" y="7" width="17" height="10" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="10" y1="10" x2="10" y2="14"/></symbol>
     <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><line x1="7" y1="20" x2="17" y2="20"/><line x1="12" y1="16" x2="12" y2="20"/></symbol>
     <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2 3 7v6c0 5.25 3.75 9.74 9 11 5.25-1.26 9-5.75 9-11V7l-9-5z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
     <symbol id="i-left" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></symbol>
     <symbol id="i-right" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></symbol>
 </svg>
@@ -577,7 +590,7 @@
 
 <main>
 <section id="inicio" class="hero">
-    <img class="hero-bg" src="https://i.postimg.cc/L5P5Cpkc/pexels-photo-9891155.jpg" alt="" fetchpriority="high" decoding="async">
+    <img class="hero-bg" src="/img/hero-vinedo-1280.webp" srcset="/img/hero-vinedo-768.webp 768w, /img/hero-vinedo-1280.webp 1280w, /img/hero-vinedo-1920.webp 1920w" sizes="(max-aspect-ratio: 3/2) 150vh, 100vw" alt="" fetchpriority="high" decoding="async" width="1920" height="1280">
     <div class="hero-inner">
         <div class="hero-card card">
             <span class="eyebrow">Cotización gratis en 24 h</span>
@@ -591,26 +604,6 @@
                 <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Instalación profesional</li>
                 <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Soporte el primer mes</li>
             </ul>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-            <div class="hero-chip float">
-                <svg viewBox="0 0 150 72" focusable="false">
-                    <polygon points="14,14 50,8 54,20 18,26" fill="#1638B2" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="32" y1="17" x2="36" y2="23" stroke="#FFFFFF" stroke-opacity=".5" stroke-width="1.2"/>
-                    <rect x="32" y="24" width="5" height="40" rx="1.5" fill="#EDF1F8" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M32 40 h-8" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
-                    <rect x="6" y="34" width="22" height="13" rx="4.5" fill="#FFFFFF" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
-                    <circle cx="11.5" cy="40.5" r="3" fill="#2D5BFF"/>
-                    <g fill="none" stroke="#2D5BFF" stroke-width="1.75" stroke-linecap="round">
-                        <path class="pulse" d="M44 34 a8 8 0 0 1 0 12"/>
-                        <path class="pulse d2" d="M50 29 a15 15 0 0 1 0 22"/>
-                    </g>
-                    <rect x="72" y="14" width="66" height="44" rx="7" fill="#2D5BFF" fill-opacity=".10" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M92 48 L105 36 L118 48 V52 H92Z" fill="#2D5BFF" fill-opacity=".35"/>
-                    <path d="M72 48 C 88 42 98 46 112 44 S 132 40 138 42" fill="none" stroke="#2D5BFF" stroke-opacity=".35" stroke-width="1.5"/>
-                    <circle class="pulse" cx="128" cy="24" r="3.5" fill="#FFB020"/>
-                </svg>
-            </div>
         </div>
     </div>
     <div class="hero-strip">
@@ -687,7 +680,7 @@
                 <p class="ideal"><strong>Ideal para:</strong> viñedos, parcelas, fundos, bodegas agrícolas, obras en construcción, campos ganaderos e invernaderos.</p>
             </div>
             <div class="service-media">
-                <img src="https://i.postimg.cc/05BxXCX4/Gemini-Generated-Image-1owf1r1owf1r1owf(1)(1).png" alt="Cámara solar instalada en poste galvanizado en una parcela rural" loading="lazy" decoding="async" width="600" height="450">
+                <img src="/img/camara-solar-parcela-600.webp" srcset="/img/camara-solar-parcela-600.webp 600w, /img/camara-solar-parcela-1000.webp 1000w" sizes="(max-width: 900px) 92vw, 460px" alt="Cámara solar instalada en poste galvanizado en una parcela rural" loading="lazy" decoding="async" width="600" height="450">
             </div>
         </article>
 
@@ -706,7 +699,7 @@
                 <p class="ideal"><strong>Ideal para:</strong> casas, condominios, edificios, parcelas de agrado, accesos, portones, patios y jardines.</p>
             </div>
             <div class="service-media">
-                <img src="https://i.postimg.cc/X7qK4n8p/Gemini-Generated-Image-9ezsqw9ezsqw9ezs(1).png" alt="Cámara de seguridad solar instalada en una casa" loading="lazy" decoding="async" width="600" height="450">
+                <img src="/img/camara-solar-casa-600.webp" srcset="/img/camara-solar-casa-600.webp 600w, /img/camara-solar-casa-1000.webp 1000w" sizes="(max-width: 900px) 92vw, 460px" alt="Cámara de seguridad solar instalada en una casa" loading="lazy" decoding="async" width="600" height="450">
             </div>
         </article>
 
@@ -1003,6 +996,7 @@
 <section id="contacto" class="section section-alt">
     <div class="container">
         <div class="final-cta card">
+            <div class="final-cta-text">
             <h2>Cotiza la instalación de tus cámaras hoy</h2>
             <p>Escríbenos con tu comuna y el tipo de propiedad. Te respondemos con una propuesta en menos de 24 horas.</p>
             <div class="center-cta" style="margin-top:0">
@@ -1010,18 +1004,65 @@
                 <a href="#seccion-formulario" class="btn btn-primary">Usar el formulario</a>
             </div>
             <small>Empresa 100% online, sin oficina presencial · <a href="mailto:contacto@solarsecurity.cl">contacto@solarsecurity.cl</a></small>
+            </div>
+            <div class="final-cta-art reveal" aria-hidden="true">
+                <svg viewBox="0 0 360 260" focusable="false">
+                    <ellipse cx="176" cy="226" rx="168" ry="20" fill="#2D5BFF" opacity=".07"/>
+                    <path d="M30 224 C 100 214 250 214 322 224" fill="none" stroke="#2D5BFF" stroke-opacity=".16" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="318" cy="44" r="22" fill="#FFB020" opacity=".14"/><circle cx="318" cy="44" r="11" fill="#FFB020" opacity=".9"/>
+                    <g class="float-sm">
+                        <rect x="58" y="210" width="34" height="8" rx="2.5" fill="#1638B2" fill-opacity=".14" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="71" y="112" width="8" height="99" rx="2" fill="#EDF1F8" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                        <polygon points="40,98 104,86 112,108 48,121" fill="#1638B2" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                        <g stroke="#FFFFFF" stroke-opacity=".45" stroke-width="1.25"><line x1="72" y1="92" x2="80" y2="114.5"/><line x1="44" y1="109.5" x2="108" y2="97"/></g>
+                        <path d="M71 146 h-12" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="30" y="137" width="32" height="18" rx="6" fill="#FFFFFF" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="38" cy="146" r="4.5" fill="#2D5BFF"/><circle cx="54" cy="142" r="1.8" fill="#FFB020"/>
+                        <g fill="none" stroke="#2D5BFF" stroke-width="1.75" stroke-linecap="round"><path class="pulse" d="M88 140 a10 10 0 0 1 0 14"/><path class="pulse d2" d="M95 134 a18 18 0 0 1 0 26"/></g>
+                    </g>
+                    <g class="float">
+                        <rect x="160" y="34" width="112" height="190" rx="18" fill="#FFFFFF" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="170" y="54" width="92" height="146" rx="8" fill="#2D5BFF" opacity=".07"/>
+                        <line x1="204" y1="44" x2="228" y2="44" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="178" y="66" width="62" height="28" rx="9" fill="#FFFFFF" stroke="#1638B2" stroke-width="1.5"/>
+                        <g stroke="#2D5BFF" stroke-opacity=".45" stroke-width="1.75" stroke-linecap="round"><line x1="187" y1="76" x2="226" y2="76"/><line x1="187" y1="84" x2="214" y2="84"/></g>
+                        <rect x="194" y="104" width="60" height="28" rx="9" fill="#2D5BFF"/>
+                        <g stroke="#FFFFFF" stroke-opacity=".8" stroke-width="1.75" stroke-linecap="round"><line x1="203" y1="114" x2="243" y2="114"/><line x1="203" y1="122" x2="228" y2="122"/></g>
+                        <rect x="178" y="142" width="62" height="40" rx="9" fill="#FFFFFF" stroke="#1638B2" stroke-width="1.5"/>
+                        <rect x="186" y="150" width="20" height="24" rx="3" fill="#2D5BFF" fill-opacity=".14" stroke="#1638B2" stroke-width="1.25"/>
+                        <g stroke="#2D5BFF" stroke-opacity=".45" stroke-width="1.75" stroke-linecap="round"><line x1="212" y1="156" x2="232" y2="156"/><line x1="212" y1="164" x2="226" y2="164"/></g>
+                    </g>
+                    <g class="float-lg">
+                        <circle cx="282" cy="150" r="17" fill="#FFB020"/>
+                        <polyline points="274,150 280,156 291,144" fill="none" stroke="#1638B2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25"/>
+                    </g>
+                </svg>
+            </div>
         </div>
     </div>
 </section>
 </main>
 
 <footer>
-    <div class="footer-brand"><svg class="sun" aria-hidden="true"><use href="#i-sun"/></svg>SolarSecurity<span class="logo-suffix">.cl</span></div>
+    <div class="footer-band" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="xMidYMax slice" focusable="false">
+            <rect width="1440" height="80" fill="#EDF1F8"/>
+            <path d="M0 64 L140 34 L250 54 L390 18 L520 50 L640 30 L780 58 L920 22 L1050 52 L1180 32 L1310 56 L1440 36 V80 H0Z" fill="#2D5BFF" opacity=".06"/>
+            <path d="M0 72 C 200 52 360 66 560 60 S 980 48 1200 62 S 1380 58 1440 64 V80 H0Z" fill="#F6F8FB"/>
+            <path d="M0 64 L140 34 L250 54 L390 18 L520 50 L640 30 L780 58 L920 22 L1050 52 L1180 32 L1310 56 L1440 36" fill="none" stroke="#2D5BFF" stroke-opacity=".14" stroke-width="1.5" stroke-linejoin="round"/>
+            <g fill="#FFFFFF"><path d="M390 18 L377 27 L384 26 L390 29 L396 25 L403 26Z"/><path d="M920 22 L907 31 L914 30 L920 33 L926 29 L933 30Z"/></g>
+        </svg>
+    </div>
+    <div class="footer-inner">
+    <div class="footer-about">
+    <div class="footer-brand"><svg class="sun" aria-hidden="true"><use href="#i-sun"/></svg><span>SolarSecurity<span class="logo-suffix">.cl</span></span></div>
     <p class="footer-tagline">Instalación de cámaras de seguridad solares · RM · Valparaíso · O'Higgins · Maule</p>
+    </div>
     <div class="footer-links">
         <a href="https://wa.me/56957817711" target="_blank" rel="noopener"><svg class="ico-wa" aria-hidden="true"><use href="#i-wa"/></svg>+56 9 5781 7711</a>
         <a href="mailto:contacto@solarsecurity.cl"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>contacto@solarsecurity.cl</a>
-        <a href="https://www.instagram.com/solarsecurity.cl" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.instagram.com/solarsecurity.cl" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-instagram"/></svg>Instagram</a>
+    </div>
     </div>
     <p class="copy">&copy; <span id="year">2026</span> SolarSecurity.cl · Todos los derechos reservados</p>
 </footer>
@@ -1187,6 +1228,11 @@
         entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
     els.forEach(function (el) { io.observe(el); });
+    var deco = document.querySelectorAll('.band, .steps, .form-art, .final-cta-art, .footer-band, .logo, .footer-brand');
+    var io2 = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { e.target.classList.toggle('anim-off', !e.isIntersecting); });
+    });
+    deco.forEach(function (el) { io2.observe(el); });
 })();
 </script>
 </body>
